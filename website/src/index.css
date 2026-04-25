@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Manrope:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --cream: 36 60% 98%;
+    --foreground: 0 0% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 10%;
+
+    --primary: 214 70% 30%; /* Deeper Professional Blue */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 24 100% 50%; /* Vibrant Orange */
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 24 100% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 24 100% 50%;
+
+    --radius: 1rem;
+
+    --font-heading: 'Sora', sans-serif;
+    --font-body: 'Manrope', sans-serif;
+
+    --gradient-primary: linear-gradient(135deg, #004A99 0%, #0066CC 100%);
+    --gradient-secondary: linear-gradient(135deg, #F58220 0%, #FF9D4D 100%);
+    --gradient-hero: radial-gradient(circle at top right, #eef6ff 0%, #ffffff 100%);
+    --shadow-premium: 0 10px 30px -10px rgba(0, 74, 153, 0.15);
+    --shadow-premium-hover: 0 20px 40px -15px rgba(0, 74, 153, 0.25);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217 91% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-heading);
+  }
+}
+
+@layer components {
+  .gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-primary);
+  }
+
+  .gradient-secondary {
+    background-image: var(--gradient-primary);
+  }
+
+  .card-shadow {
+    box-shadow: var(--shadow-premium);
+  }
+
+  .card-shadow-hover:hover {
+    box-shadow: var(--shadow-premium-hover);
+    transform: translateY(-4px);
+    transition: all 0.3s ease-out;
+  }
+
+  .hero-gradient {
+    background: var(--gradient-hero);
+  }
+
+  .glass-card {
+    @apply bg-white/70 backdrop-blur-xl border border-white/20 rounded-3xl overflow-hidden;
+    box-shadow: var(--shadow-premium);
+  }
+
+  .site-background {
+    background-image: linear-gradient(rgba(255, 245, 230, 0.4), rgba(255, 245, 230, 0.6)), url('@/assets/hero-bg.png');
+    background-size: cover;
+    background-position: 80% center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-color: #FFF9F2;
+    filter: sepia(0.05) brightness(1.02);
+  }
+
+  /* Interactive Animations */
+  .hover-lift {
+    @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-xl;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/*  */
+
+/*  */

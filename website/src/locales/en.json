@@ -1,0 +1,171 @@
+{
+  "common": {
+    "get_started": "Start Now",
+    "learn_more": "Learn More",
+    "download_app": "Download App",
+    "coming_soon": "Coming Soon"
+  },
+  "navbar": {
+    "home": "Home",
+    "features": "Features",
+    "about": "About",
+    "vision": "Vision",
+    "contact": "Contact",
+    "download": "Download"
+  },
+  "hero": {
+    "badge": "Smarter Blue-Collar Management",
+    "title_static": "Users can find easily",
+    "words": {
+      "workers": "workers.",
+      "contractors": "contractors.",
+      "contracts": "contracts.",
+      "laborers": "laborers.",
+      "teams": "teams."
+    },
+    "description": "\"TheWorkingZone bridges the gap between skilled workers and global infrastructure needs.\"",
+    "cta_primary": "Start Your Journey",
+    "cta_secondary": "Watch Experience"
+  },
+  "stats": {
+    "skilled_workers": "Skilled Workers",
+    "trusted_contractors": "Trusted Contractors",
+    "earned_by_workers": "Earned by Workers"
+  },
+  "features": {
+    "badge": "Features",
+    "title_part1": "Everything you need,",
+    "title_part2": "one app",
+    "description": "TheWorkingZone is designed to bridge the gap between skilled workers and the companies that need them, with a focus on ground-level execution.",
+    "items": {
+      "companies_title": "For Companies",
+      "companies_desc": "Define manpower needs, track real-time execution status, and manage work requirements effortlessly.",
+      "contractors_title": "For Contractors",
+      "contractors_desc": "Accept and execute company work. Manage your labor pool and act as the operational middle layer.",
+      "workers_title": "For Workers",
+      "workers_desc": "Access high-visibility jobs through verified contractors and perform work with essential app support.",
+      "workflows_title": "Controlled Workflows",
+      "workflows_desc": "Every step is managed to ensure role clarity and execution feasibility on the ground.",
+      "accuracy_title": "Geographical Accuracy",
+      "accuracy_desc": "Strategic matching based on ground reality to ensure manpower is where it's needed most.",
+      "accountability_title": "Direct Accountability",
+      "accountability_desc": "Clear communication and state transitions to maintain accountability between all stakeholders."
+    }
+  },
+  "about": {
+    "badge": "About Us",
+    "title_part1": "A Managed",
+    "title_part2": "Blue-Collar",
+    "title_part3": "Workforce Platform",
+    "description": "TheWorkingZone is a mobile-first platform designed to manage blue-collar manpower in a real-world, operationally correct manner. We focus on ground-level execution and clear accountability between all stakeholders.",
+    "item1_title": "Ground Reality Execution",
+    "item1_desc": "Unlike automation-heavy platforms, we focus on manual control where it matters for reliable results.",
+    "item2_title": "Centralized Coordination",
+    "item2_desc": "Acting as a central hub for job visibility, work flow, and role-based access control.",
+    "stats_value": "10k+",
+    "stats_label": "Connections Made"
+  },
+  "how_it_works": {
+    "badge": "How It Works",
+    "title_part1": "Simple Steps.",
+    "title_part2": "Powerful Results.",
+    "description": "A smooth process for everyone on the platform.",
+    "steps": {
+      "step1_title": "1. Post or Find",
+      "step1_desc": "Companies post jobs. Contractors find opportunities. Workers find daily work.",
+      "step2_title": "2. Connect & Assign",
+      "step2_desc": "We connect the right people and assign work quickly.",
+      "step3_title": "3. Work & Deliver",
+      "step3_desc": "Work gets done with full coordination and support.",
+      "step4_title": "4. Get Paid & Grow",
+      "step4_desc": "Payments are released. Everyone grows."
+    }
+  },
+  "vision": {
+    "badge": "Our Vision",
+    "title_part1": "Operational Clarity.",
+    "title_part2": "Consistent Growth.",
+    "description": "Our vision is to become the backbone of blue-collar workforce management, ensuring that every job is tracked, every worker is accounted for, and every company gets reliable manpower.",
+    "items": {
+      "scalability_title": "Scalability",
+      "scalability_desc": "From local pilots to multi-region operations, designed to scale with relational consistency.",
+      "compliance_title": "Compliance",
+      "compliance_desc": "Integrating attendance and regulatory compliance into the core work execution flow.",
+      "growth_title": "Financial Growth",
+      "growth_desc": "Enabling seamless payment flows and transparent unit economics for all stakeholders."
+    }
+  },
+  "cta": {
+    "title_part1": "One Platform.",
+    "title_part2": "Endless Opportunities.",
+    "description": "Join thousands of workers, contractors, and companies already growing with TheWorkingZone.",
+    "badge1": "No Hidden Fees",
+    "badge2": "Secure & Safe",
+    "badge3": "Built for India",
+    "badge4": "Always Here",
+    "trusted_by": "Trusted by 10,000+ users",
+    "download_cta": "Get the App",
+    "subtext": "Download now and take the next step"
+  },
+  "download": {
+    "badge": "Exciting News",
+    "welcome": "Welcome to our journey",
+    "title": "is working for you.",
+    "subtitle": "Building something extraordinary that's coming soon.",
+    "description": "We're on a mission to simplify labor management for everyone. Stay tuned as we prepare to launch our mobile experience.",
+    "innovation": "Innovation",
+    "innovation_desc": "Driving smarter solutions",
+    "accessibility": "Accessibility",
+    "accessibility_desc": "Access anytime, anywhere",
+    "dedication": "Dedication",
+    "dedication_desc": "Committed to every worker",
+    "launching_soon": "Launching very soon",
+    "patience": "Thank you for your patience and support.",
+    "bharat_title": "Building today for a stronger,",
+    "bharat_highlight": "Viksit Bharat."
+  },
+  "contact": {
+    "title_part1": "Get in",
+    "title_part2": "Touch",
+    "description": "Have questions? We're here to help workers and contractors build better futures together.",
+    "info_title": "Contact Information",
+    "email": "Email",
+    "phone": "Phone",
+    "office": "Office",
+    "office_val": "Mumbai, Maharashtra, India",
+    "hours": "Working Hours",
+    "hours_val": "Mon - Sat: 9:00 AM - 7:00 PM",
+    "connect_head": "Connect with us",
+    "form_title": "Send us a Message",
+    "form_subtitle": "We'll respond to your inquiry within 24 hours.",
+    "full_name": "Full Name",
+    "email_address": "Email Address",
+    "subject": "Subject",
+    "message": "Message",
+    "send": "Send Message",
+    "toast_title": "Message Sent!",
+    "toast_desc": "We'll get back to you as soon as possible."
+  },
+  "footer": {
+    "description": "Revolutionizing the blue-collar workforce by providing a transparent, efficient, and role-based managed platform for companies, contractors, and workers.",
+    "columns": {
+      "platform": "Platform",
+      "company": "Company",
+      "legal": "Legal"
+    },
+    "links": {
+      "features": "Features",
+      "how_it_works": "How it Works",
+      "vision": "Vision",
+      "about_us": "About Us",
+      "contact": "Contact",
+      "download_app": "Download App",
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service",
+      "cookies": "Cookie Policy"
+    },
+    "back_to_top": "Back to Top",
+    "systems_online": "SYSTEMS ONLINE",
+    "tagline": "Skills for Viksit Bharat"
+  }
+}
