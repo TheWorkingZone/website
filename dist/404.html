@@ -14,10 +14,7 @@
         background: #f8fafc;
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       }
-      .loader {
-        text-align: center;
-        color: #0A2540;
-      }
+      .loader { text-align: center; color: #0A2540; }
       .spinner {
         width: 36px;
         height: 36px;
@@ -31,16 +28,12 @@
       p { margin: 0; font-size: 14px; color: #64748b; }
     </style>
     <script>
-      // SPA redirect for GitHub Pages — keeps /website/ base path
-      var pathSegmentsToKeep = 1;
+      // Only redirect if we haven't already (prevent infinite loop)
       var l = window.location;
-      l.replace(
-        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
-        l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?/' +
-        l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
-        (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
-        l.hash
-      );
+      if (l.search.indexOf('~and~') === -1 && l.search[1] !== '/') {
+        var path = l.pathname.replace(/\/$/, '');
+        l.replace(l.origin + '/?/' + path.slice(1).replace(/&/g, '~and~') + l.hash);
+      }
     </script>
   </head>
   <body>
