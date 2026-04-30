@@ -15,11 +15,11 @@ const AboutSection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <span className="mb-4 inline-block font-bold tracking-widest text-[11px] uppercase text-secondary">
+            <span className="mb-4 inline-block font-bold tracking-widest text-[11px] uppercase text-primary">
               {t("about.badge")}
             </span>
             <h2 className="font-heading text-3xl font-extrabold text-[#0A2540] sm:text-5xl mb-6">
-              {t("about.title_part1")} <span className="text-primary">{t("about.title_part2")}</span> {t("about.title_part3")}
+              {t("about.title_part1")} <span className="text-secondary">{t("about.title_part2")}</span> {t("about.title_part3")}
             </h2>
             <p className="text-lg text-gray-800 leading-relaxed mb-8">
               {t("about.description")}
@@ -31,7 +31,7 @@ const AboutSection = () => {
                 { icon: Info, title: t("about.item2_title"), desc: t("about.item2_desc") }
               ].map((item, i) => (
                 <div key={i} className="flex gap-4">
-                  <div className="flex-shrink-0 h-10 w-10 flex items-center justify-center rounded-lg bg-orange-100 text-secondary">
+                  <div className="flex-shrink-0 h-10 w-10 flex items-center justify-center rounded-lg bg-red-100 text-primary">
                     <item.icon size={20} />
                   </div>
                   <div>

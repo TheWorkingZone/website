@@ -18,7 +18,7 @@ const StatsBar = () => {
             transition={{ delay: 0.1, duration: 0.5 }}
                         className="flex items-center gap-4 md:gap-6 bg-white/90 backdrop-blur-md p-5 md:p-6 rounded-3xl md:rounded-[2.5rem] border border-white shadow-premium hover-lift"
           >
-            <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-blue-50 text-blue-600 shadow-sm">
+            <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-red-50 text-primary shadow-sm">
               <Users size={28} />
             </div>
             <div>
@@ -37,7 +37,7 @@ const StatsBar = () => {
             transition={{ delay: 0.2, duration: 0.5 }}
                         className="flex items-center gap-4 md:gap-6 bg-white/90 backdrop-blur-md p-5 md:p-6 rounded-3xl md:rounded-[2.5rem] border border-white shadow-premium hover-lift"
           >
-            <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-indigo-50 text-indigo-600 shadow-sm">
+            <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-red-50 text-secondary shadow-sm">
               <ShieldCheck size={28} />
             </div>
             <div>
@@ -56,7 +56,7 @@ const StatsBar = () => {
             transition={{ delay: 0.3, duration: 0.5 }}
                         className="flex items-center gap-4 md:gap-6 bg-white/90 backdrop-blur-md p-5 md:p-6 rounded-3xl md:rounded-[2.5rem] border border-white shadow-premium hover-lift"
           >
-            <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-orange-50 text-orange-600 shadow-sm">
+            <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-red-50 text-primary shadow-sm">
               <Banknote size={28} />
             </div>
             <div>

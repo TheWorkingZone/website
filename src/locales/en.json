@@ -14,14 +14,14 @@
     "download": "Download"
   },
   "hero": {
-    "badge": "Smarter Blue-Collar Management",
-    "title_static": "Users can find easily",
+    "badge": "Built for Bharat",
+    "title_static": "One Platform to",
     "words": {
-      "workers": "workers.",
-      "contractors": "contractors.",
-      "contracts": "contracts.",
-      "laborers": "laborers.",
-      "teams": "teams."
+      "workers": "Work.",
+      "contractors": "Grow.",
+      "contracts": "Build for Bharat.",
+      "laborers": "Build for Viksit Bharat.",
+      "teams": "Succeed."
     },
     "description": "\"TheWorkingZone bridges the gap between skilled workers and global infrastructure needs.\"",
     "cta_primary": "Start Your Journey",

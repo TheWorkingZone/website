@@ -94,23 +94,33 @@ const Navbar = () => {
         </Link>
 
         {/* Desktop Navigation */}
-        <div className="hidden lg:flex items-center gap-10">
+        <div className="hidden lg:flex flex-1 items-center justify-center gap-10">
           <div className="flex items-center gap-8">
             {links.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
                 onClick={(e) => handleLinkClick(e, link.href)}
-                className="text-[15px] font-bold text-[#0A2540] transition-colors hover:text-secondary relative group/link"
+                className={`text-[15px] font-bold transition-colors hover:text-secondary relative group/link ${
+                  (link.href === "/" && location.pathname === "/" && !location.hash) || 
+                  (link.href.includes("#") && location.hash === link.href.split("#")[1])
+                    ? "text-secondary" 
+                    : "text-[#0A2540]"
+                }`}
               >
                 {link.label}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-secondary transition-all duration-300 group-hover/link:w-full" />
+                <span className={`absolute -bottom-1 left-0 h-0.5 bg-secondary transition-all duration-300 ${
+                  (link.href === "/" && location.pathname === "/" && !location.hash) || 
+                  (link.href.includes("#") && location.hash === link.href.split("#")[1])
+                    ? "w-full" 
+                    : "w-0 group-hover/link:w-full"
+                }`} />
               </a>
             ))}
           </div>
+        </div>
 
-          <div className="h-6 w-px bg-gray-200" />
-
+        <div className="hidden lg:flex items-center gap-6">
           {/* Language Switcher */}
           <DropdownMenu>
             <DropdownMenuTrigger className="flex items-center gap-1.5 text-[15px] font-bold text-[#0A2540] hover:text-secondary outline-none transition-colors">
@@ -135,9 +145,9 @@ const Navbar = () => {
 
           <Link
             to="/download"
-            className="flex items-center gap-2 rounded-2xl bg-[#0A2540] px-6 py-3 text-sm font-bold text-white shadow-lg transition-all hover:scale-105 hover:bg-blue-900 active:scale-95"
+            className="flex items-center gap-2 rounded-full bg-[#0A2540] px-8 py-3 text-sm font-bold text-white shadow-xl transition-all hover:scale-105 active:scale-95"
           >
-            {t("navbar.download")}
+            Download App
             <ArrowRight size={18} />
           </Link>
         </div>

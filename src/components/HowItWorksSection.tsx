@@ -62,7 +62,7 @@ const HowItWorksSection = () => {
                 transition={{ delay: i * 0.1, duration: 0.5 }}
                 className="relative bg-white/60 backdrop-blur-md rounded-3xl p-8 text-center group border border-white/20 shadow-sm"
               >
-                <div className="mx-auto mb-8 flex h-24 w-24 items-center justify-center rounded-full bg-blue-50/50 text-primary transition-all group-hover:bg-primary group-hover:text-white group-hover:scale-110 shadow-sm">
+                <div className="mx-auto mb-8 flex h-24 w-24 items-center justify-center rounded-full bg-red-50/50 text-primary transition-all group-hover:bg-primary group-hover:text-white group-hover:scale-110 shadow-sm">
                   <step.icon size={36} />
                   {i < steps.length - 1 && (
                     <ArrowRight className="absolute -right-6 top-1/2 -translate-y-1/2 text-gray-200 hidden lg:block" size={24} />
