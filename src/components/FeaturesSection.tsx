@@ -115,17 +115,14 @@ const FeaturesSection = () => {
             transition={{ duration: 1 }}
             className="relative lg:order-2 order-1"
           >
-            <motion.div
-               animate={{ y: [0, -15, 0] }}
-               transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-               className="relative z-10"
-            >
+            <div className="relative z-10 animate-float">
               <img
                 src={heroPhones}
                 alt="TheWorkingZone app interface"
+                loading="lazy"
                 className="w-full h-auto drop-shadow-[0_35px_35px_rgba(0,0,0,0.1)]"
               />
-            </motion.div>
+            </div>
           </motion.div>
         </div>
       </div>

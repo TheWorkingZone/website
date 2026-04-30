@@ -1,13 +1,17 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useReducer } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Play } from "lucide-react";
-
 import { useTranslation } from "react-i18next";
+
+// Detect if user prefers reduced motion or is on a low-end device
+const isMobile = () => typeof window !== "undefined" && window.innerWidth < 768;
 
 const HeroSection = () => {
   const { t } = useTranslation();
   const [index, setIndex] = useState(0);
+  const mobile = isMobile();
+
   const rotatingWords = [
     { text: t("hero.words.workers"), color: "text-green-500" },
     { text: t("hero.words.contractors"), color: "text-secondary" },
@@ -19,7 +23,7 @@ const HeroSection = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       setIndex((prev) => (prev + 1) % rotatingWords.length);
-    }, 2500); // Faster rotation
+    }, 2500);
     return () => clearInterval(timer);
   }, []);
 
@@ -27,23 +31,19 @@ const HeroSection = () => {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.1
-      }
+      transition: { staggerChildren: 0.1, delayChildren: 0.1 }
     }
   };
 
   const lineVariants = {
     hidden: { opacity: 0, y: 15 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.4,
-        ease: "easeOut"
-      }
-    }
+    visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" } }
+  };
+
+  // On mobile: simple fade instead of letter-by-letter
+  const wordVariants = {
+    hidden: { opacity: 0, y: 10 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.3 } }
   };
 
   const letterVariants = {
@@ -53,31 +53,29 @@ const HeroSection = () => {
 
   return (
     <section className="relative min-h-[90vh] bg-transparent flex items-center overflow-hidden pt-24 pb-12">
-      {/* Dynamic Background Elements */}
-      <motion.div 
-        animate={{ 
-          scale: [1, 1.2, 1],
-          opacity: [0.3, 0.5, 0.3],
-          x: [0, 50, 0],
-          y: [0, -30, 0]
-        }}
-        transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
-        className="absolute top-[-10%] right-[-10%] h-[600px] w-[600px] rounded-full bg-blue-100/40 blur-[120px] -z-10" 
-      />
-      <motion.div 
-        animate={{ 
-          scale: [1, 1.3, 1],
-          opacity: [0.2, 0.4, 0.2],
-          x: [0, -40, 0],
-          y: [0, 60, 0]
-        }}
-        transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-        className="absolute bottom-[-10%] left-[-10%] h-[500px] w-[500px] rounded-full bg-orange-100/20 blur-[120px] -z-10" 
-      />
+      {/* Background blobs — static on mobile, animated on desktop */}
+      {mobile ? (
+        <>
+          <div className="absolute top-[-10%] right-[-10%] h-[400px] w-[400px] rounded-full bg-blue-100/30 blur-[100px] -z-10" />
+          <div className="absolute bottom-[-10%] left-[-10%] h-[300px] w-[300px] rounded-full bg-orange-100/20 blur-[100px] -z-10" />
+        </>
+      ) : (
+        <>
+          <motion.div
+            animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3], x: [0, 50, 0], y: [0, -30, 0] }}
+            transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
+            className="absolute top-[-10%] right-[-10%] h-[600px] w-[600px] rounded-full bg-blue-100/40 blur-[120px] -z-10"
+          />
+          <motion.div
+            animate={{ scale: [1, 1.3, 1], opacity: [0.2, 0.4, 0.2], x: [0, -40, 0], y: [0, 60, 0] }}
+            transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+            className="absolute bottom-[-10%] left-[-10%] h-[500px] w-[500px] rounded-full bg-orange-100/20 blur-[120px] -z-10"
+          />
+        </>
+      )}
 
       <div className="container mx-auto px-6">
         <div className="max-w-5xl">
-          {/* Hero Content */}
           <div className="relative">
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
@@ -99,33 +97,44 @@ const HeroSection = () => {
                 <motion.span variants={lineVariants} className="block mb-2">{t("hero.title_static")}</motion.span>
                 <div className="h-[1.15em] relative block">
                   <AnimatePresence mode="wait">
-                    <motion.div
-                      key={rotatingWords[index].text}
-                      className={`inline-block ${rotatingWords[index].color}`}
-                      initial="hidden"
-                      animate="visible"
-                      exit={{ opacity: 0, y: -20, scale: 0.95, transition: { duration: 0.2 } }}
-                    >
-                      {rotatingWords[index].text.split("").map((letter, i) => (
-                        <motion.span
-                          key={i}
-                          variants={letterVariants}
-                          transition={{ 
-                            duration: 0.25, 
-                            delay: i * 0.03, 
-                            ease: "backOut" 
-                          }}
-                        >
-                          {letter}
-                        </motion.span>
-                      ))}
-                    </motion.div>
+                    {mobile ? (
+                      // Simple word fade on mobile — no letter-by-letter
+                      <motion.div
+                        key={rotatingWords[index].text}
+                        className={`inline-block ${rotatingWords[index].color}`}
+                        variants={wordVariants}
+                        initial="hidden"
+                        animate="visible"
+                        exit={{ opacity: 0, transition: { duration: 0.2 } }}
+                      >
+                        {rotatingWords[index].text}
+                      </motion.div>
+                    ) : (
+                      // Letter-by-letter on desktop
+                      <motion.div
+                        key={rotatingWords[index].text}
+                        className={`inline-block ${rotatingWords[index].color}`}
+                        initial="hidden"
+                        animate="visible"
+                        exit={{ opacity: 0, y: -20, scale: 0.95, transition: { duration: 0.2 } }}
+                      >
+                        {rotatingWords[index].text.split("").map((letter, i) => (
+                          <motion.span
+                            key={i}
+                            variants={letterVariants}
+                            transition={{ duration: 0.25, delay: i * 0.03, ease: "backOut" }}
+                          >
+                            {letter}
+                          </motion.span>
+                        ))}
+                      </motion.div>
+                    )}
                   </AnimatePresence>
                 </div>
               </h1>
             </motion.div>
 
-            <motion.p 
+            <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8, duration: 0.8 }}
@@ -134,7 +143,7 @@ const HeroSection = () => {
               {t("hero.description")}
             </motion.p>
 
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1, duration: 0.5 }}

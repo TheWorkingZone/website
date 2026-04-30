@@ -109,7 +109,9 @@
     background-image: linear-gradient(rgba(255, 245, 230, 0.4), rgba(255, 245, 230, 0.6)), url('@/assets/hero-bg.png');
     background-size: cover;
     background-position: 80% center;
-    background-attachment: fixed;
+    /* width: 100vw;  */
+    height: 100vh;
+    background-attachment: scroll;
     background-repeat: no-repeat;
     background-color: #FFF9F2;
     filter: sepia(0.05) brightness(1.02);
