@@ -11,7 +11,7 @@ const FeaturesSection = () => {
       icon: Briefcase,
       title: t("features.items.companies_title"),
       description: t("features.items.companies_desc"),
-      color: "bg-blue-50 text-primary",
+      color: "bg-red-50 text-primary",
     },
     {
       icon: Users,
@@ -23,13 +23,13 @@ const FeaturesSection = () => {
       icon: HardHat,
       title: t("features.items.workers_title"),
       description: t("features.items.workers_desc"),
-      color: "bg-indigo-50 text-indigo-600",
+      color: "bg-red-50 text-secondary",
     },
     {
       icon: Shield,
       title: t("features.items.workflows_title"),
       description: t("features.items.workflows_desc"),
-      color: "bg-green-50 text-green-600",
+      color: "bg-green-50 text-green-700",
     },
     {
       icon: MapPin,
@@ -41,7 +41,7 @@ const FeaturesSection = () => {
       icon: MessageSquare,
       title: t("features.items.accountability_title"),
       description: t("features.items.accountability_desc"),
-      color: "bg-purple-50 text-purple-600",
+      color: "bg-red-50 text-primary",
     },
   ];
 

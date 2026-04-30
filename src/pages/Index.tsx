@@ -2,11 +2,11 @@ import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
-import StatsBar from "@/components/StatsBar";
 import FeaturesSection from "@/components/FeaturesSection";
 import HowItWorksSection from "@/components/HowItWorksSection";
 import AboutSection from "@/components/AboutSection";
 import VisionSection from "@/components/VisionSection";
+import BuiltForBharat from "@/components/BuiltForBharat";
 import CTABanner from "@/components/CTABanner";
 import Footer from "@/components/Footer";
 
@@ -29,11 +29,11 @@ const Index = () => {
     <div className="min-h-screen site-background">
       <Navbar />
       <HeroSection />
-      <StatsBar />
       <FeaturesSection />
       <HowItWorksSection />
       <AboutSection />
       <VisionSection />
+      <BuiltForBharat />
       <CTABanner />
       <Footer />
     </div>

@@ -39,7 +39,7 @@ const Footer = () => {
   return (
     <footer className="relative border-t border-gray-100 bg-white pt-10 pb-6 overflow-hidden">
       {/* Decorative background elements */}
-      <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-blue-50/30 to-transparent -z-10" />
+      <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-red-50/30 to-transparent -z-10" />
       
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-10">
@@ -124,7 +124,7 @@ const Footer = () => {
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
               onClick={scrollToTop}
-              className="h-9 w-9 rounded-lg bg-primary/90 text-white flex items-center justify-center shadow-md shadow-blue-50 group transition-all"
+              className="h-9 w-9 rounded-lg bg-primary/90 text-white flex items-center justify-center shadow-md shadow-red-50 group transition-all"
             >
               <ArrowUp className="group-hover:-translate-y-0.5 transition-transform" size={18} />
             </motion.button>

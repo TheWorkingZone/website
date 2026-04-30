@@ -14,7 +14,7 @@ const CTABanner = () => {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="relative overflow-hidden bg-[#0A2540] rounded-[40px] p-8 md:p-16 text-white"
+          className="relative overflow-hidden bg-[#450a0a] rounded-[40px] p-8 md:p-16 text-white"
         >
           {/* Subtle background patterns */}
           <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-primary/20 to-transparent pointer-events-none" />
@@ -50,12 +50,12 @@ const CTABanner = () => {
                 {[1, 2, 3, 4].map((i) => (
                   <img
                     key={i}
-                    className="inline-block h-12 w-12 rounded-full ring-4 ring-[#0A2540] object-cover"
+                    className="inline-block h-12 w-12 rounded-full ring-4 ring-[#450a0a] object-cover"
                     src={`https://i.pravatar.cc/150?u=${i + 10}`}
                     alt="User avatar"
                   />
                 ))}
-                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-secondary text-xs font-bold ring-4 ring-[#0A2540]">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-secondary text-xs font-bold ring-4 ring-[#450a0a]">
                   +10k
                 </div>
               </div>

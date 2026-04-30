@@ -16,11 +16,15 @@
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 10%;
 
-    --primary: 214 70% 30%; /* Deeper Professional Blue */
+    --primary: 214 70% 15%; /* Navy #0A2540 */
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 24 100% 50%; /* Vibrant Orange */
+    --secondary: 24 90% 55%; /* Orange #F58220 */
     --secondary-foreground: 0 0% 100%;
+
+    --maroon: 0 70% 35%; /* Maroon #991B1B */
+    --green: 142 70% 30%; /* Green #15803D */
+    --blue: 214 70% 30%; /* Lighter Blue */
 
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
@@ -40,11 +44,11 @@
     --font-heading: 'Sora', sans-serif;
     --font-body: 'Manrope', sans-serif;
 
-    --gradient-primary: linear-gradient(135deg, #004A99 0%, #0066CC 100%);
-    --gradient-secondary: linear-gradient(135deg, #F58220 0%, #FF9D4D 100%);
-    --gradient-hero: radial-gradient(circle at top right, #eef6ff 0%, #ffffff 100%);
-    --shadow-premium: 0 10px 30px -10px rgba(0, 74, 153, 0.15);
-    --shadow-premium-hover: 0 20px 40px -15px rgba(0, 74, 153, 0.25);
+    --gradient-primary: linear-gradient(135deg, #B03030 0%, #991B1B 100%);
+    --gradient-secondary: linear-gradient(135deg, #B03030 0%, #7F1D1D 100%);
+    --gradient-hero: radial-gradient(circle at top right, #FEF2F2 0%, #FFFFFF 100%);
+    --shadow-premium: 0 10px 30px -10px rgba(176, 48, 48, 0.15);
+    --shadow-premium-hover: 0 20px 40px -15px rgba(176, 48, 48, 0.25);
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -106,15 +110,63 @@
   }
 
   .site-background {
-    background-image: linear-gradient(rgba(255, 245, 230, 0.4), rgba(255, 245, 230, 0.6)), url('@/assets/hero-bg.png');
-    background-size: cover;
-    background-position: 80% center;
-    /* width: 100vw;  */
-    height: 100vh;
-    background-attachment: scroll;
-    background-repeat: no-repeat;
-    background-color: #FFF9F2;
-    filter: sepia(0.05) brightness(1.02);
+    background-color: #FFFFFF;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  .hero-waves {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 60%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+  }
+
+  .hero-wave-maroon {
+    position: absolute;
+    top: -15%;
+    right: -15%;
+    width: 140%;
+    height: 65%;
+    background: #991B1B;
+    border-radius: 0 0 0 100%;
+    transform: rotate(-10deg);
+  }
+
+  .hero-wave-green {
+    position: absolute;
+    top: 5%;
+    right: -25%;
+    width: 150%;
+    height: 75%;
+    background: #15803D;
+    border-radius: 0 0 0 100%;
+    transform: rotate(-15deg);
+  }
+
+  .hero-wave-orange {
+    position: absolute;
+    top: 25%;
+    right: -35%;
+    width: 160%;
+    height: 85%;
+    background: #F58220;
+    border-radius: 0 0 0 100%;
+    transform: rotate(-20deg);
+  }
+
+  .hero-wave-blue {
+    position: absolute;
+    top: 50%;
+    right: -45%;
+    width: 180%;
+    height: 95%;
+    background: #0A2540;
+    border-radius: 0 0 0 100%;
+    transform: rotate(-25deg);
   }
 
   /* Interactive Animations */
