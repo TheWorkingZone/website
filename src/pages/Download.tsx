@@ -83,22 +83,29 @@ const DownloadPage = () => {
                 ))}
               </motion.div>
 
-              {/* Bottom Launch Banner */}
+              {/* Bottom Download Button */}
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.6 }}
-                className="bg-white/40 backdrop-blur-md border border-white/60 p-6 rounded-3xl shadow-xl max-w-xl group hover:bg-white/60 transition-all cursor-default"
+                className="max-w-xl"
               >
-                <div className="flex items-center gap-6">
-                  <div className="w-14 h-14 rounded-2xl bg-[#0A2540] flex items-center justify-center text-white shrink-0 shadow-lg shadow-blue-900/20">
-                    <Hourglass size={24} className="group-hover:rotate-180 transition-transform duration-700" />
+                <a
+                  href="https://github.com/TheWorkingZone/TheWorkingZone/releases/download/v1.0.0-beta/TheWorkingZone-v0.0.1-beta.apk"
+                  download
+                  className="flex items-center justify-between gap-6 bg-secondary hover:bg-secondary/90 p-6 rounded-3xl shadow-xl group transition-all hover:scale-[1.02] active:scale-95"
+                >
+                  <div className="flex items-center gap-6">
+                    <div className="w-14 h-14 rounded-2xl bg-white flex items-center justify-center text-secondary shrink-0 shadow-lg">
+                      <Smartphone size={24} className="group-hover:scale-110 transition-transform" />
+                    </div>
+                    <div className="flex-grow text-left">
+                      <p className="text-lg font-bold text-white">Download APK Now</p>
+                      <p className="text-xs text-white/80 font-medium">Version 1.0.0 Beta • Android</p>
+                    </div>
                   </div>
-                  <div className="flex-grow">
-                    <p className="text-lg font-bold text-[#0A2540]">{t("download.launching_soon")}</p>
-                    <p className="text-xs text-muted-foreground font-medium italic">{t("download.patience")}</p>
-                  </div>
-                </div>
+                  <ArrowRight size={24} className="text-white group-hover:translate-x-1 transition-transform shrink-0" />
+                </a>
               </motion.div>
             </div>
 
