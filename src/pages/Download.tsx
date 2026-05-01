@@ -91,7 +91,7 @@ const DownloadPage = () => {
                 className="max-w-xl"
               >
                 <a
-                  href="https://github.com/TheWorkingZone/TheWorkingZone/releases/download/v1.0.0-beta/TheWorkingZone-v0.0.1-beta.apk"
+                  href="https://github.com/TheWorkingZone/app-releases/releases/download/v1.0.0-beta/TheWorkingZone-v0.0.1-beta.apk"
                   download
                   className="flex items-center justify-between gap-6 bg-secondary hover:bg-secondary/90 p-6 rounded-3xl shadow-xl group transition-all hover:scale-[1.02] active:scale-95"
                 >
