@@ -1,37 +1,11 @@
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
-import { Mail, Phone, MapPin, Send, MessageSquare, Clock, MessageCircle } from "lucide-react";
+import { Mail, Phone, Clock, MessageCircle, MessageSquare } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { useToast } from "@/components/ui/use-toast";
 
 const Contact = () => {
   const { t } = useTranslation();
-  const { toast } = useToast();
-
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const formData = new FormData(e.currentTarget);
-    const fullName = formData.get("fullName") as string;
-    const email = formData.get("email") as string;
-    const subject = formData.get("subject") as string;
-    const message = formData.get("message") as string;
-
-    const whatsappMessage = `*New Inquiry from Website*%0A%0A*Name:* ${fullName}%0A*Email:* ${email}%0A*Subject:* ${subject}%0A*Message:* ${message}`;
-    const whatsappUrl = `https://wa.me/917004102260?text=${whatsappMessage}`;
-
-    window.open(whatsappUrl, "_blank");
-
-    toast({
-      title: t("contact.toast_title"),
-      description: t("contact.toast_desc"),
-    });
-    
-    e.currentTarget.reset();
-  };
 
   return (
     <div className="min-h-screen site-background">
@@ -117,49 +91,42 @@ const Contact = () => {
               </div>
             </motion.div>
 
-            {/* Contact Form */}
+            {/* Contact Form - Coming Soon */}
             <motion.div 
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               className="lg:col-span-2"
             >
-              <div className="glass-card p-8 md:p-10">
-                <h3 className="text-2xl font-bold text-[#0A2540] mb-2">{t("contact.form_title")}</h3>
-                <p className="text-[#0A2540]/60 font-medium mb-8 text-lg">{t("contact.form_subtitle")}</p>
-                
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div className="space-y-2">
-                      <label className="text-sm font-bold text-[#0A2540]">{t("contact.full_name")}</label>
-                      <Input name="fullName" placeholder={t("contact.full_name")} className="bg-white/50 border-border/50" required />
-                    </div>
-                    <div className="space-y-2">
-                      <label className="text-sm font-bold text-[#0A2540]">{t("contact.email_address")}</label>
-                      <Input name="email" type="email" placeholder={t("contact.email_address")} className="bg-white/50 border-border/50" required />
-                    </div>
+              <div className="glass-card p-8 md:p-10 text-center">
+                <div className="max-w-md mx-auto">
+                  <div className="w-20 h-20 rounded-full bg-orange-50 flex items-center justify-center text-secondary mx-auto mb-6">
+                    <MessageSquare size={36} />
                   </div>
+                  <h3 className="text-2xl font-bold text-[#0A2540] mb-3">Contact Form Coming Soon</h3>
+                  <p className="text-[#0A2540]/60 font-medium mb-8 text-lg">
+                    We're working on a direct contact form. In the meantime, please reach out to us via email, phone, or WhatsApp.
+                  </p>
                   
-                  <div className="space-y-2">
-                    <label className="text-sm font-bold text-[#0A2540]">{t("contact.subject")}</label>
-                    <Input name="subject" placeholder={t("contact.subject")} className="bg-white/50 border-border/50" required />
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a 
+                      href="https://wa.me/917004102260" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-green-600 hover:bg-green-700 text-white font-bold rounded-xl transition-all hover:scale-105 active:scale-95 shadow-lg"
+                    >
+                      <MessageCircle size={20} />
+                      <span>WhatsApp Us</span>
+                    </a>
+                    <a 
+                      href="mailto:support@theworkingzone.com"
+                      className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-secondary hover:bg-secondary/90 text-white font-bold rounded-xl transition-all hover:scale-105 active:scale-95 shadow-lg"
+                    >
+                      <Mail size={20} />
+                      <span>Email Us</span>
+                    </a>
                   </div>
-
-                  <div className="space-y-2">
-                    <label className="text-sm font-bold text-[#0A2540]">{t("contact.message")}</label>
-                    <Textarea 
-                      name="message"
-                      placeholder={t("contact.message")} 
-                      className="min-h-[150px] bg-white/50 border-border/50" 
-                      required 
-                    />
-                  </div>
-
-                  <Button type="submit" className="w-full md:w-auto bg-secondary hover:bg-secondary/90 text-white font-bold py-6 px-10 rounded-xl shadow-lg shadow-orange-200 transition-all active:scale-95 flex items-center gap-2">
-                    {t("contact.send")}
-                    <Send size={18} />
-                  </Button>
-                </form>
+                </div>
               </div>
             </motion.div>
           </div>

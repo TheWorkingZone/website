@@ -62,6 +62,7 @@ const Navbar = () => {
     { href: "/#features", label: t("navbar.features") },
     { href: "/#about", label: t("navbar.about") },
     { href: "/#vision", label: t("navbar.vision") },
+    { href: "/learn-more", label: "Learn More" },
     { href: "/contact", label: t("navbar.contact") },
   ];
 

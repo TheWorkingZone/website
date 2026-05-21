@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
-import { Sparkles, Rocket, Smartphone, Heart, Hourglass, ArrowRight } from "lucide-react";
+import { Sparkles, Rocket, Smartphone, Heart, PlaySquare, ArrowRight, PlaySquareIcon } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import heroImg from "@/assets/construction-hero.png";
@@ -107,8 +107,32 @@ const DownloadPage = () => {
                   <ArrowRight size={24} className="text-white group-hover:translate-x-1 transition-transform shrink-0" />
                 </a>
               </motion.div>
+              
+                {/* Bottom Download Button */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.6 }}
+                className="max-w-xl"
+              >
+                <a
+                  href="#"
+                  className="flex items-center justify-between gap-6 bg-secondary hover:bg-secondary/90 p-6 rounded-3xl shadow-xl group transition-all hover:scale-[1.02] active:scale-95"
+                >
+                  <div className="flex items-center gap-6">
+                    <div className="w-14 h-14 rounded-2xl bg-white flex items-center justify-center text-secondary shrink-0 shadow-lg">
+                      <PlaySquareIcon size={24} className="group-hover:scale-110 transition-transform" />
+                    </div>
+                    <div className="flex-grow text-left">
+                      <p className="text-lg font-bold text-white">Download From Play Store</p>
+                      <p className="text-xs text-white/80 font-medium">Comming soon</p>
+                    </div>
+                  </div>
+                  <ArrowRight size={24} className="text-white group-hover:translate-x-1 transition-transform shrink-0" />
+                </a>
+              </motion.div>
             </div>
-
+            
             {/* Right Side Text Overlay */}
             <div className="lg:col-span-6 flex flex-col justify-center items-center lg:items-start xl:pl-24">
               <motion.div

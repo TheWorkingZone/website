@@ -23,9 +23,9 @@ const Footer = () => {
       { label: t("footer.links.download_app"), href: "/download" },
     ],
     legal: [
-      { label: t("footer.links.privacy"), href: "#" },
-      { label: t("footer.links.terms"), href: "#" },
-      { label: t("footer.links.cookies"), href: "#" },
+      { label: t("footer.links.privacy"), href: "/privacy-policy" },
+      { label: t("footer.links.terms"), href: "/terms-conditions" },
+      { label: "Learn More", href: "/learn-more" },
     ],
   };
 

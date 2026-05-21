@@ -9,6 +9,9 @@ import Index from "./pages/Index.tsx";
 import Download from "./pages/Download.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import Contact from "./pages/Contact.tsx";
+import LearnMore from "./pages/LearnMore.tsx";
+import PrivacyPolicy from "./pages/PrivacyPolicy.tsx";
+import TermsConditions from "./pages/TermsConditions.tsx";
 import "./i18n";
 
 const queryClient = new QueryClient();
@@ -35,6 +38,9 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/download" element={<Download />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/learn-more" element={<LearnMore />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/terms-conditions" element={<TermsConditions />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
