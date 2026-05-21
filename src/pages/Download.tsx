@@ -82,31 +82,6 @@ const DownloadPage = () => {
                   </div>
                 ))}
               </motion.div>
-
-              {/* Bottom Download Button */}
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.6 }}
-                className="max-w-xl"
-              >
-                <a
-                  href="https://github.com/TheWorkingZone/app-releases/releases/download/v1.0.0-beta/TheWorkingZone-v0.0.1-beta.apk"
-                  download
-                  className="flex items-center justify-between gap-6 bg-secondary hover:bg-secondary/90 p-6 rounded-3xl shadow-xl group transition-all hover:scale-[1.02] active:scale-95"
-                >
-                  <div className="flex items-center gap-6">
-                    <div className="w-14 h-14 rounded-2xl bg-white flex items-center justify-center text-secondary shrink-0 shadow-lg">
-                      <Smartphone size={24} className="group-hover:scale-110 transition-transform" />
-                    </div>
-                    <div className="flex-grow text-left">
-                      <p className="text-lg font-bold text-white">Download APK Now</p>
-                      <p className="text-xs text-white/80 font-medium">Version 1.0.0 Beta • Android</p>
-                    </div>
-                  </div>
-                  <ArrowRight size={24} className="text-white group-hover:translate-x-1 transition-transform shrink-0" />
-                </a>
-              </motion.div>
               
                 {/* Bottom Download Button */}
               <motion.div
