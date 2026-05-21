@@ -22,7 +22,7 @@ const LearnMore = () => {
       title: "Terms & Conditions",
       description: "Read our terms of service and understand your rights and responsibilities when using TheWorkingZone.",
       color: "bg-orange-50 text-orange-600",
-      link: "/terms-conditions",
+      link: "/terms-and-conditions",
       highlights: ["User Agreement", "Platform Rules", "Legal Rights"]
     }
   ];

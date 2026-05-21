@@ -24,7 +24,7 @@ const Footer = () => {
     ],
     legal: [
       { label: t("footer.links.privacy"), href: "/privacy-policy" },
-      { label: t("footer.links.terms"), href: "/terms-conditions" },
+      { label: t("footer.links.terms"), href: "/terms-and-conditions" },
       { label: "Learn More", href: "/learn-more" },
     ],
   };
