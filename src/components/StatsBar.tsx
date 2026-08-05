@@ -7,7 +7,7 @@ const StatsBar = () => {
   const { t } = useTranslation();
 
   return (
-    <section className="relative z-20 -mt-10 px-6">
+    <section className="relative z-20 py-6 px-6">
       <div className="container mx-auto">
         <div className="grid gap-6 md:grid-cols-3">
           {/* Skilled Workers Stat */}

@@ -12,6 +12,11 @@ import Contact from "./pages/Contact.tsx";
 import LearnMore from "./pages/LearnMore.tsx";
 import PrivacyPolicy from "./pages/PrivacyPolicy.tsx";
 import TermsConditions from "./pages/TermsConditions.tsx";
+import Features from "./pages/Features.tsx";
+import About from "./pages/About.tsx";
+import Vision from "./pages/Vision.tsx";
+import HowItWorks from "./pages/HowItWorks.tsx";
+import ScrollToTop from "./components/ScrollToTop.tsx";
 import "./i18n";
 
 const queryClient = new QueryClient();
@@ -34,8 +39,13 @@ const App = () => (
       <Sonner />
       <LanguageWrapper>
         <BrowserRouter basename={import.meta.env.BASE_URL}>
+          <ScrollToTop />
           <Routes>
             <Route path="/" element={<Index />} />
+            <Route path="/features" element={<Features />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/vision" element={<Vision />} />
+            <Route path="/how-it-works" element={<HowItWorks />} />
             <Route path="/download" element={<Download />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/learn-more" element={<LearnMore />} />

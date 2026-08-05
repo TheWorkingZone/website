@@ -59,22 +59,14 @@ const Navbar = () => {
 
   const links = [
     { href: "/", label: t("navbar.home") },
-    { href: "/#features", label: t("navbar.features") },
-    { href: "/#about", label: t("navbar.about") },
-    { href: "/#vision", label: t("navbar.vision") },
+    { href: "/features", label: t("navbar.features") },
+    { href: "/about", label: t("navbar.about") },
+    { href: "/vision", label: t("navbar.vision") },
     { href: "/learn-more", label: "Learn More" },
     { href: "/contact", label: t("navbar.contact") },
   ];
 
-  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    if (href.includes("#") && location.pathname === "/") {
-      e.preventDefault();
-      const targetId = href.split("#")[1];
-      const element = document.getElementById(targetId);
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
-      }
-    }
+  const handleLinkClick = () => {
     setIsOpen(false);
   };
 
@@ -98,15 +90,15 @@ const Navbar = () => {
         <div className="hidden lg:flex items-center gap-10">
           <div className="flex items-center gap-8">
             {links.map((link) => (
-              <a
+              <Link
                 key={link.label}
-                href={link.href}
-                onClick={(e) => handleLinkClick(e, link.href)}
+                to={link.href}
+                onClick={handleLinkClick}
                 className="text-[15px] font-bold text-[#0A2540] transition-colors hover:text-secondary relative group/link"
               >
                 {link.label}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-secondary transition-all duration-300 group-hover/link:w-full" />
-              </a>
+              </Link>
             ))}
           </div>
 
@@ -163,7 +155,7 @@ const Navbar = () => {
                 <Link
                   key={link.label}
                   to={link.href}
-                  onClick={(e) => handleLinkClick(e, link.href)}
+                  onClick={handleLinkClick}
                   className="font-body text-lg font-bold text-[#0A2540] py-2 border-l-4 border-transparent hover:border-primary hover:pl-4 transition-all"
                 >
                   {link.label}

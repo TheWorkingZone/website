@@ -1,144 +1,348 @@
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
-import { Sparkles, Rocket, Smartphone, Heart, PlaySquare, ArrowRight, PlaySquareIcon } from "lucide-react";
+import { Link } from "react-router-dom";
+import {
+  Download,
+  Sparkles,
+  CheckCircle2,
+  Smartphone,
+  ShieldCheck,
+  Zap,
+  Star,
+  Users,
+  ArrowRight,
+  Lock,
+  Award,
+  Globe,
+  QrCode,
+} from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import heroImg from "@/assets/construction-hero.png";
+import heroShowcase from "@/assets/hero-showcase.jpg";
 
 const DownloadPage = () => {
   const { t } = useTranslation();
 
+  const PLAY_STORE_URL = "https://play.google.com/store/apps/details?id=com.theworkingzone.app&pcampaignid=web_share";
+
   return (
-    <div className="min-h-screen bg-white overflow-hidden flex flex-col">
+    <div className="min-h-screen site-background flex flex-col font-body">
       <Navbar />
 
-      <main className="flex-grow relative flex items-center pt-20">
-        {/* Background Image with Gradient Mask */}
-        <div className="absolute inset-0 z-0">
-          <img 
-            src={heroImg} 
-            alt="Construction background" 
-            className="w-full h-full object-cover object-center lg:object-right opacity-40 lg:opacity-100"
+      <main className="flex-grow pt-28 lg:pt-32 pb-16">
+        {/* Seamless Open Hero Section */}
+        <section className="relative py-12 md:py-16 overflow-hidden">
+          {/* Theme Dynamic Ambient Lights */}
+          <motion.div
+            animate={{ scale: [1, 1.25, 1], opacity: [0.35, 0.55, 0.35], x: [0, 40, 0] }}
+            transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute top-0 right-[15%] w-[500px] h-[500px] rounded-full bg-emerald-400/20 blur-[140px] pointer-events-none -z-10"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/95 to-transparent hidden lg:block" />
-          <div className="absolute inset-0 bg-white/80 lg:hidden" />
-        </div>
+          <motion.div
+            animate={{ scale: [1, 1.3, 1], opacity: [0.3, 0.5, 0.3], y: [0, -40, 0] }}
+            transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute top-10 left-[5%] w-[500px] h-[500px] rounded-full bg-blue-500/20 blur-[140px] pointer-events-none -z-10"
+          />
+          <motion.div
+            animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.6, 0.3] }}
+            transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute bottom-0 right-[35%] w-[450px] h-[450px] rounded-full bg-orange-400/20 blur-[130px] pointer-events-none -z-10"
+          />
+          <motion.div
+            animate={{ scale: [1, 1.35, 1], opacity: [0.25, 0.45, 0.25] }}
+            transition={{ duration: 16, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute top-1/3 left-[35%] w-[400px] h-[400px] rounded-full bg-rose-500/20 blur-[130px] pointer-events-none -z-10"
+          />
 
-        <div className="container mx-auto px-6 relative z-10 py-12">
-          <div className="grid lg:grid-cols-12 gap-12 items-center">
-            {/* Left Content */}
-            <div className="lg:col-span-6 space-y-8">
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6 }}
-              >
-                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-orange-50 text-secondary border border-orange-100 mb-6 group cursor-default">
-                  <Sparkles size={14} className="animate-pulse" />
-                  <span className="text-[10px] font-black uppercase tracking-[0.2em]">{t("download.badge")}</span>
-                </div>
-                
-                <p className="text-[11px] font-bold text-[#0A2540]/40 uppercase tracking-[0.3em] mb-4">
-                  {t("download.welcome")}
-                </p>
-                
-                <h1 className="font-heading text-4xl md:text-7xl font-extrabold text-[#0A2540] leading-[1] tracking-tighter mb-4">
-                  TheWorking<span className="text-secondary">Zone</span>
-                  <br />
-                  {t("download.title")}
-                </h1>
+          <div className="container mx-auto px-6 max-w-6xl">
+            <div className="grid lg:grid-cols-12 gap-12 items-center">
+              {/* Left Column: Copy & Actions */}
+              <div className="lg:col-span-7">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6 }}
+                >
+                  {/* Badge */}
+                  <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white/90 backdrop-blur-md border border-gray-200/80 shadow-md text-[#0A2540] mb-6">
+                    <span className="flex h-2 w-2 rounded-full bg-emerald-500 animate-ping" />
+                    <Sparkles size={14} className="text-orange-500" />
+                    <span className="text-[11px] font-black uppercase tracking-[0.2em] text-[#0A2540]">
+                      Official Mobile App
+                    </span>
+                    <span className="flex h-2 w-2 rounded-full bg-rose-600" />
+                  </div>
 
-                <div className="w-16 h-1 bg-secondary mb-8" />
+                  <h1 className="font-heading text-4xl sm:text-6xl font-extrabold text-[#0A2540] tracking-tight leading-[1.1] mb-6">
+                    Download{" "}
+                    <span className="bg-gradient-to-r from-orange-500 via-rose-600 to-blue-700 bg-clip-text text-transparent">
+                      TheWorkingZone
+                    </span>{" "}
+                    Mobile App
+                  </h1>
 
-                <h3 className="text-xl md:text-2xl font-bold text-[#0A2540] mb-4">
-                  {t("download.subtitle")}
-                </h3>
-                
-                <p className="text-[#0A2540]/70 text-base md:text-lg max-w-xl font-medium">
-                  {t("download.description")}
-                </p>
-              </motion.div>
+                  <p className="text-lg md:text-xl text-[#0A2540]/80 font-medium leading-relaxed mb-8 max-w-2xl">
+                    Get instant access to daily jobs, verified worker profiles, contractor management tools, and transparent labor dispatching across India.
+                  </p>
 
-              {/* Features Grid */}
-              <motion.div 
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3, duration: 0.6 }}
-                className="grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-4 pt-4"
-              >
-                {[
-                  { icon: Rocket, label: t("download.innovation"), desc: t("download.innovation_desc") },
-                  { icon: Smartphone, label: t("download.accessibility"), desc: t("download.accessibility_desc") },
-                  { icon: Heart, label: t("download.dedication"), desc: t("download.dedication_desc") },
-                ].map((item, i) => (
-                  <div key={i} className="text-center md:text-left space-y-3">
-                    <div className="w-12 h-12 rounded-xl bg-white shadow-lg flex items-center justify-center text-primary border border-gray-100 mx-auto md:mx-0">
-                      <item.icon size={20} />
+                  {/* Value Bullet Points */}
+                  <div className="grid sm:grid-cols-2 gap-3 mb-10 max-w-xl">
+                    <div className="flex items-center gap-2.5 text-xs font-bold text-[#0A2540] bg-white/80 backdrop-blur-sm p-3 rounded-xl border border-gray-200/60 shadow-sm">
+                      <CheckCircle2 size={16} className="text-emerald-500 shrink-0" />
+                      <span>100% Free for Workers</span>
+                    </div>
+                    <div className="flex items-center gap-2.5 text-xs font-bold text-[#0A2540] bg-white/80 backdrop-blur-sm p-3 rounded-xl border border-gray-200/60 shadow-sm">
+                      <CheckCircle2 size={16} className="text-orange-500 shrink-0" />
+                      <span>Instant Location Alerts</span>
+                    </div>
+                    <div className="flex items-center gap-2.5 text-xs font-bold text-[#0A2540] bg-white/80 backdrop-blur-sm p-3 rounded-xl border border-gray-200/60 shadow-sm">
+                      <CheckCircle2 size={16} className="text-rose-700 shrink-0" />
+                      <span>Direct Daily Wage Logs</span>
+                    </div>
+                    <div className="flex items-center gap-2.5 text-xs font-bold text-[#0A2540] bg-white/80 backdrop-blur-sm p-3 rounded-xl border border-gray-200/60 shadow-sm">
+                      <CheckCircle2 size={16} className="text-blue-600 shrink-0" />
+                      <span>Regional Languages</span>
+                    </div>
+                  </div>
+
+                  {/* Download Action Card */}
+                  <div className="bg-gradient-to-br from-[#0A2540] via-[#0A2540] to-rose-950 p-6 md:p-8 rounded-[32px] text-white shadow-2xl border border-rose-900/30 max-w-xl mb-6">
+                    <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
+                      <div className="flex items-center gap-4 text-left">
+                        <div className="w-14 h-14 rounded-2xl bg-orange-500 text-white flex items-center justify-center shrink-0 shadow-lg">
+                          <Smartphone size={28} />
+                        </div>
+                        <div>
+                          <div className="flex items-center gap-1.5 text-amber-400 mb-1">
+                            {[1, 2, 3, 4, 5].map((s) => (
+                              <Star key={s} size={14} fill="currentColor" />
+                            ))}
+                            <span className="text-xs font-bold text-white ml-1">4.9 / 5</span>
+                          </div>
+                          <h3 className="font-heading text-lg font-extrabold text-white">
+                            Available on Google Play
+                          </h3>
+                          <p className="text-xs text-white/70 font-medium">Safe, Verified & Instant Installation</p>
+                        </div>
+                      </div>
+
+                      <a
+                        href={PLAY_STORE_URL}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-2xl bg-orange-500 hover:bg-orange-600 text-white font-bold text-sm shadow-xl transition-all hover:scale-105 active:scale-95 shrink-0 w-full sm:w-auto"
+                      >
+                        <Download size={18} />
+                        <span>Install App</span>
+                      </a>
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
+
+              {/* Right Column: App Showcase */}
+              <div className="lg:col-span-5 relative flex justify-center">
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.8 }}
+                  className="relative w-full max-w-md"
+                >
+                  <div className="relative z-10 animate-float rounded-[32px] overflow-hidden border-4 border-white shadow-2xl bg-white p-2">
+                    <img
+                      src={heroShowcase}
+                      alt="TheWorkingZone Mobile App Showcase"
+                      className="w-full h-auto rounded-[24px] object-cover"
+                    />
+                  </div>
+
+                  {/* Floating Trust Badges */}
+                  <motion.div
+                    animate={{ y: [0, -8, 0] }}
+                    transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                    className="absolute -top-4 -left-6 z-20 bg-white/95 backdrop-blur-md p-4 rounded-2xl shadow-xl border border-gray-100 flex items-center gap-3"
+                  >
+                    <div className="w-10 h-10 rounded-xl bg-emerald-500 text-white flex items-center justify-center shadow-md">
+                      <ShieldCheck size={20} />
                     </div>
                     <div>
-                      <p className="text-[10px] font-black tracking-widest text-[#0A2540] uppercase">{item.label}</p>
-                      <p className="text-[10px] text-muted-foreground font-medium">{item.desc}</p>
+                      <p className="text-xs font-black text-[#0A2540] uppercase tracking-wider">100% Verified</p>
+                      <p className="text-[11px] text-gray-500 font-bold">Google Play Store Security</p>
                     </div>
-                  </div>
-                ))}
-              </motion.div>
-              
-                {/* Bottom Download Button */}
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.6 }}
-                className="max-w-xl"
-              >
-                <a
-                  href="#"
-                  className="flex items-center justify-between gap-6 bg-secondary hover:bg-secondary/90 p-6 rounded-3xl shadow-xl group transition-all hover:scale-[1.02] active:scale-95"
-                >
-                  <div className="flex items-center gap-6">
-                    <div className="w-14 h-14 rounded-2xl bg-white flex items-center justify-center text-secondary shrink-0 shadow-lg">
-                      <PlaySquareIcon size={24} className="group-hover:scale-110 transition-transform" />
-                    </div>
-                    <div className="flex-grow text-left">
-                      <p className="text-lg font-bold text-white">Download From Play Store</p>
-                      <p className="text-xs text-white/80 font-medium">Comming soon</p>
-                    </div>
-                  </div>
-                  <ArrowRight size={24} className="text-white group-hover:translate-x-1 transition-transform shrink-0" />
-                </a>
-              </motion.div>
-            </div>
-            
-            {/* Right Side Text Overlay */}
-            <div className="lg:col-span-6 flex flex-col justify-center items-center lg:items-start xl:pl-24">
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.4, duration: 0.8 }}
-                className="glass-card p-10 border-white/40 shadow-2xl relative overflow-hidden group hover:scale-[1.02] transition-transform duration-500 lg:mb-20"
-              >
-                {/* Decorative glowing dots */}
-                <div className="absolute top-0 right-0 w-24 h-24 bg-secondary/10 blur-3xl rounded-full" />
-                <div className="absolute bottom-0 left-0 w-24 h-24 bg-primary/10 blur-3xl rounded-full" />
+                  </motion.div>
 
-                <div className="w-16 h-1 bg-secondary mb-8 group-hover:w-24 transition-all duration-500" />
-                <h2 className="text-3xl md:text-6xl font-black text-[#0A2540] leading-[1.1] tracking-tight max-w-sm">
-                  {t("download.bharat_title")}
-                  <br />
-                  <span className="text-secondary relative">
-                    {t("download.bharat_highlight")}
-                    <motion.span 
-                      className="absolute -bottom-2 left-0 h-1 bg-secondary/30 w-full"
-                      initial={{ width: 0 }}
-                      animate={{ width: "100%" }}
-                      transition={{ delay: 1, duration: 0.8 }}
-                    />
-                  </span>
-                </h2>
-                <div className="w-16 h-1 bg-primary mt-8 group-hover:w-24 transition-all duration-500" />
-              </motion.div>
+                  <motion.div
+                    animate={{ y: [0, 8, 0] }}
+                    transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                    className="absolute -bottom-6 -right-4 z-20 bg-white/95 backdrop-blur-md p-4 rounded-2xl shadow-xl border border-gray-100 flex items-center gap-3"
+                  >
+                    <div className="w-10 h-10 rounded-xl bg-orange-500 text-white flex items-center justify-center shadow-md">
+                      <Zap size={20} />
+                    </div>
+                    <div>
+                      <p className="text-xs font-black text-[#0A2540] uppercase tracking-wider">Instant Work</p>
+                      <p className="text-[11px] text-gray-500 font-bold">Daily Job Alerts</p>
+                    </div>
+                  </motion.div>
+                </motion.div>
+              </div>
             </div>
           </div>
-        </div>
+        </section>
+
+        {/* Tailored App Experiences (For Workers & Contractors) */}
+        <section className="container mx-auto px-6 max-w-6xl mb-20">
+          <div className="text-center max-w-2xl mx-auto mb-14">
+            <span className="text-[11px] font-extrabold uppercase tracking-widest text-emerald-600 block mb-2">
+              Designed For Everyone
+            </span>
+            <h2 className="font-heading text-3xl md:text-4xl font-extrabold text-[#0A2540]">
+              One App for Workers & Contractors
+            </h2>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* For Workers Card */}
+            <motion.div
+              initial={{ opacity: 0, y: 25 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="bg-white p-8 md:p-10 rounded-[36px] border border-emerald-200 shadow-lg hover:shadow-2xl transition-all flex flex-col justify-between"
+            >
+              <div>
+                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-600 text-white flex items-center justify-center shadow-md mb-6">
+                  <Users size={28} />
+                </div>
+                <span className="text-[10px] font-black uppercase tracking-widest text-emerald-800 bg-emerald-50 border border-emerald-200 px-3 py-1 rounded-full mb-3 inline-block">
+                  For Workers
+                </span>
+                <h3 className="font-heading text-2xl font-extrabold text-[#0A2540] mb-3">
+                  Find Daily Work & Build Reputation
+                </h3>
+                <p className="text-sm text-gray-600 font-medium leading-relaxed mb-6">
+                  Get notified when local contractors need your skills. Apply in one tap, document your work hours, and build a verified reputation for higher wages.
+                </p>
+
+                <div className="space-y-3 mb-8">
+                  <div className="flex items-center gap-3 text-xs font-bold text-gray-800">
+                    <CheckCircle2 size={16} className="text-emerald-600 shrink-0" />
+                    <span>Free worker registration & job applications</span>
+                  </div>
+                  <div className="flex items-center gap-3 text-xs font-bold text-gray-800">
+                    <CheckCircle2 size={16} className="text-emerald-600 shrink-0" />
+                    <span>Direct pay agreement tracking without middlemen</span>
+                  </div>
+                  <div className="flex items-center gap-3 text-xs font-bold text-gray-800">
+                    <CheckCircle2 size={16} className="text-emerald-600 shrink-0" />
+                    <span>Simple voice & regional language UI support</span>
+                  </div>
+                </div>
+              </div>
+
+              <a
+                href={PLAY_STORE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 w-full py-4 rounded-2xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm shadow-md transition-all active:scale-95"
+              >
+                <Download size={18} />
+                <span>Get Worker App</span>
+              </a>
+            </motion.div>
+
+            {/* For Contractors Card */}
+            <motion.div
+              initial={{ opacity: 0, y: 25 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1, duration: 0.5 }}
+              className="bg-white p-8 md:p-10 rounded-[36px] border border-orange-200 shadow-lg hover:shadow-2xl transition-all flex flex-col justify-between"
+            >
+              <div>
+                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-orange-500 to-amber-600 text-white flex items-center justify-center shadow-md mb-6">
+                  <Zap size={28} />
+                </div>
+                <span className="text-[10px] font-black uppercase tracking-widest text-orange-800 bg-orange-50 border border-orange-200 px-3 py-1 rounded-full mb-3 inline-block">
+                  For Contractors & Hirers
+                </span>
+                <h3 className="font-heading text-2xl font-extrabold text-[#0A2540] mb-3">
+                  Mobilize & Manage Skilled Talent
+                </h3>
+                <p className="text-sm text-gray-600 font-medium leading-relaxed mb-6">
+                  Post site requirements in 60 seconds, review applicant skill ratings, assign labor teams, and monitor real-time daily site attendance.
+                </p>
+
+                <div className="space-y-3 mb-8">
+                  <div className="flex items-center gap-3 text-xs font-bold text-gray-800">
+                    <CheckCircle2 size={16} className="text-orange-500 shrink-0" />
+                    <span>Instant dispatch to local verified workers</span>
+                  </div>
+                  <div className="flex items-center gap-3 text-xs font-bold text-gray-800">
+                    <CheckCircle2 size={16} className="text-orange-500 shrink-0" />
+                    <span>Multi-site attendance & contract logs</span>
+                  </div>
+                  <div className="flex items-center gap-3 text-xs font-bold text-gray-800">
+                    <CheckCircle2 size={16} className="text-orange-500 shrink-0" />
+                    <span>Rating & attendance history visibility</span>
+                  </div>
+                </div>
+              </div>
+
+              <a
+                href={PLAY_STORE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 w-full py-4 rounded-2xl bg-orange-500 hover:bg-orange-600 text-white font-bold text-sm shadow-md transition-all active:scale-95"
+              >
+                <Download size={18} />
+                <span>Get Contractor App</span>
+              </a>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Viksit Bharat Spotlight Card */}
+        <section className="container mx-auto px-6 max-w-5xl">
+          <div className="bg-gradient-to-r from-rose-900 via-[#0A2540] to-blue-950 p-10 md:p-14 rounded-[36px] text-white shadow-2xl relative overflow-hidden border border-rose-800/30">
+            <div className="absolute top-0 right-0 w-80 h-80 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
+            <div className="absolute bottom-0 left-0 w-80 h-80 bg-orange-500/10 rounded-full blur-3xl pointer-events-none" />
+
+            <div className="grid md:grid-cols-12 gap-8 items-center relative z-10">
+              <div className="md:col-span-8">
+                <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-rose-500/20 text-rose-200 border border-rose-400/30 text-xs font-extrabold uppercase tracking-wider mb-4">
+                  <Award size={14} className="text-emerald-400" />
+                  <span>National Empowerment</span>
+                </div>
+                <h2 className="font-heading text-3xl md:text-5xl font-extrabold mb-4 leading-tight">
+                  Building Today for a Stronger, <span className="text-orange-400">Viksit Bharat</span>
+                </h2>
+                <p className="text-white/80 font-medium leading-relaxed text-base mb-8">
+                  TheWorkingZone is dedicated to organizing India's blue-collar workforce, facilitating transparent wages, digital identity, and dignified employment across every city.
+                </p>
+
+                <a
+                  href={PLAY_STORE_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2.5 px-8 py-4 rounded-2xl bg-orange-500 hover:bg-orange-600 text-white font-bold text-base shadow-xl transition-all hover:scale-105 active:scale-95"
+                >
+                  <Download size={20} />
+                  <span>Download on Google Play</span>
+                </a>
+              </div>
+
+              <div className="md:col-span-4 flex justify-center">
+                <div className="w-36 h-36 rounded-full bg-gradient-to-tr from-emerald-400 via-orange-400 to-rose-500 p-1 shadow-2xl flex items-center justify-center">
+                  <div className="w-full h-full rounded-full bg-[#0A2540] flex flex-col items-center justify-center text-center p-4">
+                    <Globe size={36} className="text-emerald-400 mb-1" />
+                    <span className="text-[10px] font-black uppercase text-white">Viksit Bharat</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
 
       <Footer />

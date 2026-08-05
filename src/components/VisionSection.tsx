@@ -10,19 +10,19 @@ const VisionSection = () => {
       icon: Globe,
       title: t("vision.items.scalability_title"),
       desc: t("vision.items.scalability_desc"),
-      color: "bg-blue-50 text-primary"
+      color: "bg-emerald-50 text-emerald-600 border border-emerald-100"
     },
     {
       icon: Compass,
       title: t("vision.items.compliance_title"),
       desc: t("vision.items.compliance_desc"),
-      color: "bg-orange-50 text-secondary"
+      color: "bg-orange-50 text-orange-500 border border-orange-100"
     },
     {
       icon: Sparkles,
       title: t("vision.items.growth_title"),
       desc: t("vision.items.growth_desc"),
-      color: "bg-indigo-50 text-indigo-600"
+      color: "bg-rose-50 text-rose-700 border border-rose-100"
     }
   ];
 

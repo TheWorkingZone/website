@@ -20,8 +20,8 @@
       "workers": "কর্মী।",
       "contractors": "ঠিকাদার।",
       "contracts": "চুক্তি।",
-      "laborers": "শ্রমিক।",
-      "teams": "দল।"
+      "teams": "দল।",
+      "skill_pools": "দক্ষতা পুল."
     },
     "description": "\"TheWorkingZone দক্ষ কর্মী এবং বৈশ্বিক অবকাঠামো চাহিদার মধ্যে ব্যবধান দূর করে।\"",
     "cta_primary": "আপনার যাত্রা শুরু করুন",

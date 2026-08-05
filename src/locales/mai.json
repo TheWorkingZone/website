@@ -20,8 +20,8 @@
       "workers": "श्रमिक।",
       "contractors": "ठेकेदार।",
       "contracts": "अनुबंध।",
-      "laborers": "मजदूर।",
-      "teams": "टोली।"
+      "teams": "टोली।",
+      "skill_pools": "कौशल समूह."
     },
     "description": "\"TheWorkingZone कुशल श्रमिक आ वैश्विक बुनियादी ढांचाक जरूरतक बीचक दूरी कें कम करैत अछि।\"",
     "cta_primary": "अपनी यात्रा शुरू करू",

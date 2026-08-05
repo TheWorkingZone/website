@@ -20,8 +20,8 @@
       "workers": "कामगार.",
       "contractors": "कंत्राटदार.",
       "contracts": "करार.",
-      "laborers": "मजूर.",
-      "teams": "संघ."
+      "teams": "संघ.",
+      "skill_pools": "कौशल्य पूल."
     },
     "description": "\"TheWorkingZone कुशल कामगार आणि जागतिक पायाभूत सुविधांच्या गरजांमधील अंतर कमी करते.\"",
     "cta_primary": "तुमचा प्रवास सुरू करा",

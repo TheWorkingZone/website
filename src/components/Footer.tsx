@@ -13,12 +13,12 @@ const Footer = () => {
 
   const footerLinks = {
     platform: [
-      { label: t("footer.links.features"), href: "/#features" },
-      { label: t("footer.links.how_it_works"), href: "/#how-it-works" },
-      { label: t("footer.links.vision"), href: "/#vision" },
+      { label: t("footer.links.features"), href: "/features" },
+      { label: t("footer.links.how_it_works"), href: "/how-it-works" },
+      { label: t("footer.links.vision"), href: "/vision" },
     ],
     company: [
-      { label: t("footer.links.about_us"), href: "/#about" },
+      { label: t("footer.links.about_us"), href: "/about" },
       { label: t("footer.links.contact"), href: "/contact" },
       { label: t("footer.links.download_app"), href: "/download" },
     ],

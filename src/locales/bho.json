@@ -20,8 +20,8 @@
       "workers": "मजदूर।",
       "contractors": "ठेकेदार।",
       "contracts": "करार।",
-      "laborers": "श्रमिक।",
-      "teams": "टोली।"
+      "teams": "टोली।",
+      "skill_pools": "कौशल समूह."
     },
     "description": "\"TheWorkingZone कुशल मजदूर अउरी वैश्विक बुनियादी ढांचा के जरूरत के बीच के दूरी के कम करेला।\"",
     "cta_primary": "अपन यात्रा शुरू करीं",

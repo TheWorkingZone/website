@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { Briefcase, HardHat, Users, Shield, MapPin, MessageSquare } from "lucide-react";
-import heroPhones from "@/assets/hero-phones.png";
+import heroShowcase from "@/assets/hero-showcase.jpg";
 
 const FeaturesSection = () => {
   const { t } = useTranslation();
@@ -11,37 +11,37 @@ const FeaturesSection = () => {
       icon: Briefcase,
       title: t("features.items.companies_title"),
       description: t("features.items.companies_desc"),
-      color: "bg-blue-50 text-primary",
+      color: "bg-blue-50 text-blue-700 border border-blue-100",
     },
     {
       icon: Users,
       title: t("features.items.contractors_title"),
       description: t("features.items.contractors_desc"),
-      color: "bg-orange-50 text-secondary",
+      color: "bg-orange-50 text-orange-500 border border-orange-100",
     },
     {
       icon: HardHat,
       title: t("features.items.workers_title"),
       description: t("features.items.workers_desc"),
-      color: "bg-indigo-50 text-indigo-600",
+      color: "bg-emerald-50 text-emerald-600 border border-emerald-100",
     },
     {
       icon: Shield,
       title: t("features.items.workflows_title"),
       description: t("features.items.workflows_desc"),
-      color: "bg-green-50 text-green-600",
+      color: "bg-rose-50 text-rose-700 border border-rose-100",
     },
     {
       icon: MapPin,
       title: t("features.items.accuracy_title"),
       description: t("features.items.accuracy_desc"),
-      color: "bg-blue-50 text-primary",
+      color: "bg-emerald-50 text-emerald-600 border border-emerald-100",
     },
     {
       icon: MessageSquare,
       title: t("features.items.accountability_title"),
       description: t("features.items.accountability_desc"),
-      color: "bg-purple-50 text-purple-600",
+      color: "bg-orange-50 text-orange-500 border border-orange-100",
     },
   ];
 
@@ -115,12 +115,12 @@ const FeaturesSection = () => {
             transition={{ duration: 1 }}
             className="relative lg:order-2 order-1"
           >
-            <div className="relative z-10 animate-float">
+            <div className="relative z-10 animate-float rounded-[32px] overflow-hidden border-4 border-white shadow-2xl bg-white p-2">
               <img
-                src={heroPhones}
+                src={heroShowcase}
                 alt="TheWorkingZone app interface"
                 loading="lazy"
-                className="w-full h-auto drop-shadow-[0_35px_35px_rgba(0,0,0,0.1)]"
+                className="w-full h-auto rounded-[24px] object-cover"
               />
             </div>
           </motion.div>

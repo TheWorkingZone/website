@@ -57,6 +57,11 @@
   }
 }
 
+html, body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
 @layer base {
   * {
     @apply border-border;
@@ -106,15 +111,11 @@
   }
 
   .site-background {
-    background-image: linear-gradient(rgba(255, 245, 230, 0.4), rgba(255, 245, 230, 0.6)), url('@/assets/hero-bg.png');
+    background-image: linear-gradient(rgba(248, 250, 252, 0.85), rgba(248, 250, 252, 0.92)), url('@/assets/hero-bg.png');
     background-size: cover;
-    background-position: 80% center;
-    /* width: 100vw;  */
-    height: 100vh;
-    background-attachment: scroll;
-    background-repeat: no-repeat;
-    background-color: #FFF9F2;
-    filter: sepia(0.05) brightness(1.02);
+    background-position: center right;
+    background-attachment: fixed;
+    min-height: 100vh;
   }
 
   /* Interactive Animations */

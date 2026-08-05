@@ -20,7 +20,7 @@
       "workers": "workers.",
       "contractors": "contractors.",
       "contracts": "contracts.",
-      "laborers": "laborers.",
+      "skill_pools": "skill pools.",
       "teams": "teams."
     },
     "description": "\"TheWorkingZone bridges the gap between skilled workers and global infrastructure needs.\"",
