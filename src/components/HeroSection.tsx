@@ -71,7 +71,7 @@ const HeroSection = () => {
             </motion.div>
 
             {/* Refined, Slightly Smaller Headline */}
-            <h1 className="font-heading text-2xl sm:text-4xl md:text-5xl lg:text-5xl font-extrabold leading-[1.12] text-[#0A2540] tracking-tight mb-5 break-words">
+            <h1 className="font-heading text-3xl sm:text-5xl md:text-6xl font-extrabold leading-[1.08] text-[#0A2540] tracking-tight mb-6 break-words">
               {t("hero.connect_easily")} <br />
               <span className="inline-block relative min-h-[1.2em] align-bottom">
                 <AnimatePresence mode="wait">

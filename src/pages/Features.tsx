@@ -135,7 +135,7 @@ const FeaturesPage = () => {
                 <span className="flex h-2 w-2 rounded-full bg-rose-600" />
               </div>
 
-              <h1 className="font-heading text-4xl sm:text-6xl md:text-7xl font-extrabold text-[#0A2540] tracking-tight mb-6 leading-[1.1] break-words">
+              <h1 className="font-heading text-3xl sm:text-5xl md:text-6xl font-extrabold text-[#0A2540] tracking-tight mb-6 leading-[1.1] break-words">
                 Powerful Features for{" "}
                 <span className="bg-gradient-to-r from-orange-500 via-rose-600 to-blue-700 bg-clip-text text-transparent inline-block">
                   {t("features_page.hero_title_gradient", "Workers & Contractors")}

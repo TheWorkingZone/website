@@ -311,7 +311,10 @@ const DownloadPage = () => {
                   <span>{t("download_page.viksit_badge")}</span>
                 </div>
                 <h2 className="font-heading text-2xl sm:text-4xl md:text-5xl font-extrabold mb-4 leading-tight break-words">
-                  {t("download_page.viksit_title")} <span className="text-orange-400 inline-block">Viksit Bharat</span>
+                  {t("download_page.viksit_title1", "Building Today for a Stronger,")}{" "}
+                  <span className="text-orange-400 inline-block">
+                    {t("download_page.viksit_title2", "Viksit Bharat")}
+                  </span>
                 </h2>
                 <p className="text-white/80 font-medium leading-relaxed text-base mb-8">
                   {t("download_page.viksit_desc")}
