@@ -7,6 +7,11 @@
     <meta name="description" content="TheWorkingZone connects workers, contractors, and companies. Manage blue-collar work with operational clarity." />
     <meta name="author" content="TheWorkingZone" />
 
+    <!-- Security Hardening Headers & Policies -->
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN" />
+
     <meta property="og:title" content="TheWorkingZone - Workforce Management" />
     <meta property="og:description" content="TheWorkingZone connects workers, contractors, and companies. Download the app today." />
     <meta property="og:type" content="website" />
@@ -20,12 +25,14 @@
     <meta name="twitter:site" content="TheWorkingZone" />
     <meta name="twitter:image" content="https://theworkingzone.com/favicon.ico" />
 
-    <!-- GitHub Pages SPA redirect handler -->
+    <!-- Secure GitHub Pages SPA Redirect Handler -->
     <script>
       (function(l) {
-        if (l.search[1] === '/') {
+        if (l.search && l.search[1] === '/') {
           var path = l.search.slice(2).replace(/~and~/g, '&');
-          window.history.replaceState(null, null, '/' + path + l.hash);
+          if (!path.startsWith('//') && !path.includes('://')) {
+            window.history.replaceState(null, null, '/' + path + l.hash);
+          }
         }
       }(window.location));
     </script>

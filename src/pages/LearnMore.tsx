@@ -3,12 +3,10 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import {
-  BookOpen,
   Search,
   Shield,
   FileText,
   PlayCircle,
-  ChevronRight,
   ChevronDown,
   Download,
   Users,
@@ -26,46 +24,6 @@ import {
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-// FAQ Data
-const faqs = [
-  {
-    category: "workers",
-    question: "How do I create a Worker Profile on TheWorkingZone?",
-    answer:
-      "Download TheWorkingZone app from the Google Play Store, sign up with your phone number, select 'Worker', and fill in your skills, experience, location, and daily expected wage. Your profile will be instantly visible to contractors nearby.",
-  },
-  {
-    category: "workers",
-    question: "Is there any registration fee for workers?",
-    answer:
-      "No! Registering as a worker and applying for job opportunities on TheWorkingZone is completely free.",
-  },
-  {
-    category: "contractors",
-    question: "How do contractors post job requirements?",
-    answer:
-      "Contractors can log into the app, select 'Post New Requirement', specify the required skill categories, worker count, location, duration, and daily rate. Matching local workers receive instant job alerts.",
-  },
-  {
-    category: "contractors",
-    question: "Can I manage multiple project sites simultaneously?",
-    answer:
-      "Yes, the contractor dashboard allows you to organize labor pools across different job sites, track attendance, and monitor daily progress in real time.",
-  },
-  {
-    category: "payments",
-    question: "How are payments handled between hirers and workers?",
-    answer:
-      "Agreed wages are documented transparently in the job agreement. Direct payments can be settled according to agreed schedules (daily, weekly, or upon project completion).",
-  },
-  {
-    category: "security",
-    question: "How is my personal information protected?",
-    answer:
-      "We use industry-standard encryption, secure OTP authentication, and strict privacy controls. Your personal contact details are kept secure and shared only for verified job engagements.",
-  },
-];
-
 const LearnMore = () => {
   const { t } = useTranslation();
   const [searchQuery, setSearchQuery] = useState("");
@@ -75,85 +33,124 @@ const LearnMore = () => {
 
   const PLAY_STORE_URL = "https://play.google.com/store/apps/details?id=com.theworkingzone.app&pcampaignid=web_share";
 
+  const faqs = [
+    {
+      category: "workers",
+      question: "How do I create a Worker Profile on TheWorkingZone?",
+      answer:
+        "Download TheWorkingZone app from the Google Play Store, sign up with your phone number, select 'Worker', and fill in your skills, experience, location, and daily expected wage. Your profile will be instantly visible to contractors nearby.",
+    },
+    {
+      category: "workers",
+      question: "Is there any registration fee for workers?",
+      answer:
+        "No! Registering as a worker and applying for job opportunities on TheWorkingZone is completely free.",
+    },
+    {
+      category: "contractors",
+      question: "How do contractors post job requirements?",
+      answer:
+        "Contractors can log into the app, select 'Post New Requirement', specify the required skill categories, worker count, location, duration, and daily rate. Matching local workers receive instant job alerts.",
+    },
+    {
+      category: "contractors",
+      question: "Can I manage multiple project sites simultaneously?",
+      answer:
+        "Yes, the contractor dashboard allows you to organize labor pools across different job sites, track attendance, and monitor daily progress in real time.",
+    },
+    {
+      category: "payments",
+      question: "How are payments handled between hirers and workers?",
+      answer:
+        "Agreed wages are documented transparently in the job agreement. Direct payments can be settled according to agreed schedules (daily, weekly, or upon project completion).",
+    },
+    {
+      category: "security",
+      question: "How is my personal information protected?",
+      answer:
+        "We use industry-standard encryption, secure OTP authentication, and strict privacy controls. Your personal contact details are kept secure and shared only for verified job engagements.",
+    },
+  ];
+
   const guideCards = [
     {
       id: "worker-guide",
       tab: "workers",
       icon: Users,
-      badge: "For Workers",
-      title: "Worker Success Guide",
-      description: "Everything you need to build your reputation, find daily work, and get hired faster.",
+      badge: t("download_page.worker_badge"),
+      title: t("download_page.worker_title"),
+      description: t("download_page.worker_desc"),
       borderColor: "border-emerald-200 hover:border-emerald-500",
       iconBg: "bg-gradient-to-br from-emerald-500 to-teal-600 text-white shadow-md shadow-emerald-200",
       badgeColor: "bg-emerald-50 text-emerald-800 border-emerald-200",
       btnColor: "hover:bg-emerald-600 hover:text-white text-emerald-950 bg-emerald-50",
       checkColor: "text-emerald-600",
       steps: [
-        "Complete your profile with certified skills & experience",
-        "Set location preferences for nearby job alerts",
-        "Apply to verified jobs with one tap",
-        "Receive ratings & build your digital track record",
+        t("download_page.worker_i1"),
+        t("download_page.worker_i2"),
+        t("download_page.worker_i3"),
+        t("hero.bullet4"),
       ],
     },
     {
       id: "contractor-guide",
       tab: "contractors",
       icon: Briefcase,
-      badge: "For Hirers & Contractors",
-      title: "Workforce Management Hub",
-      description: "Streamline contractor operations, mobilize skilled labor pools, and manage site attendance.",
+      badge: t("download_page.contractor_badge"),
+      title: t("download_page.contractor_title"),
+      description: t("download_page.contractor_desc"),
       borderColor: "border-orange-200 hover:border-orange-500",
       iconBg: "bg-gradient-to-br from-orange-500 to-amber-600 text-white shadow-md shadow-orange-200",
       badgeColor: "bg-orange-50 text-orange-800 border-orange-200",
       btnColor: "hover:bg-orange-500 hover:text-white text-orange-950 bg-orange-50",
       checkColor: "text-orange-500",
       steps: [
-        "Post detailed workforce requirements in under 60s",
-        "Review applicant skill ratings & verified experience",
-        "Assign teams to specific site locations",
-        "Track daily attendance and digital contract logs",
+        t("download_page.contractor_i1"),
+        t("download_page.contractor_i2"),
+        t("download_page.contractor_i3"),
+        t("hero.badge_dispatch_title"),
       ],
     },
     {
       id: "legal-guide",
       tab: "legal",
       icon: Shield,
-      badge: "Security & Legal",
-      title: "Safety & Compliance Hub",
-      description: "Learn how we protect worker rights, secure client data, and enforce platform transparency.",
+      badge: t("vision_page.pillar4_title"),
+      title: t("about_page.impact3_title"),
+      description: t("about_page.impact3_desc"),
       borderColor: "border-rose-200 hover:border-rose-500",
       iconBg: "bg-gradient-to-br from-rose-700 to-maroon-800 text-white shadow-md shadow-rose-200",
       badgeColor: "bg-rose-50 text-rose-900 border-rose-200",
       btnColor: "hover:bg-rose-800 hover:text-white text-rose-950 bg-rose-50",
       checkColor: "text-rose-700",
       steps: [
-        "256-bit encrypted data protection standards",
-        "Clear transparent labor terms & no hidden fees",
-        "Rating integrity and anti-fraud monitoring",
-        "Direct support and grievance escalation channels",
+        t("cta.pill_secure"),
+        t("cta.pill_no_hidden"),
+        t("hero.badge_verified_title"),
+        t("cta.pill_support"),
       ],
     },
   ];
 
   const videoTutorials = [
     {
-      title: "Getting Started with Worker Registration",
-      category: "Worker Basics",
-      desc: "Step-by-step walkthrough of creating a worker profile and choosing primary skills.",
+      title: t("learn_more_page.v1_title"),
+      category: t("learn_more_page.tab_workers"),
+      desc: t("learn_more_page.v1_desc"),
       duration: "2 min",
       accent: "bg-emerald-500",
     },
     {
-      title: "How Contractors Post Work Requirements",
-      category: "Contractor Hub",
-      desc: "Learn how to dispatch job notifications to local worker pools instantly.",
+      title: t("learn_more_page.v2_title"),
+      category: t("learn_more_page.tab_contractors"),
+      desc: t("learn_more_page.v2_desc"),
       duration: "3 min",
       accent: "bg-orange-500",
     },
     {
-      title: "Managing Multi-Site Teams & Attendance",
-      category: "Operations",
-      desc: "Tips for monitoring workforce presence across multiple construction sites.",
+      title: t("learn_more_page.v3_title"),
+      category: t("features_page.f5_title"),
+      desc: t("learn_more_page.v3_desc"),
       duration: "4 min",
       accent: "bg-rose-700",
     },
@@ -172,9 +169,9 @@ const LearnMore = () => {
       <Navbar />
 
       <main className="flex-grow pt-28 lg:pt-32 pb-16">
-        {/* Seamless Open Hero Section - No Enclosed Dark Box */}
+        {/* Seamless Open Hero Section */}
         <section className="relative py-16 md:py-24 overflow-hidden">
-          {/* Theme Dynamic Ambient Lights: Blue, Light Green, Orange, Light Maroon */}
+          {/* Theme Dynamic Ambient Lights */}
           <motion.div
             animate={{ scale: [1, 1.25, 1], opacity: [0.35, 0.55, 0.35], x: [0, 40, 0] }}
             transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
@@ -207,25 +204,25 @@ const LearnMore = () => {
                 <span className="flex h-2 w-2 rounded-full bg-emerald-500 animate-ping" />
                 <Sparkles size={14} className="text-orange-500" />
                 <span className="text-[11px] font-black uppercase tracking-[0.2em] text-[#0A2540]">
-                  Knowledge & Resource Center
+                  {t("learn_more_page.badge")}
                 </span>
                 <span className="flex h-2 w-2 rounded-full bg-rose-600" />
               </div>
 
               {/* Bold Dynamic Title */}
-              <h1 className="font-heading text-4xl sm:text-6xl md:text-7xl font-extrabold text-[#0A2540] tracking-tight mb-6 leading-[1.1]">
+              <h1 className="font-heading text-4xl sm:text-6xl md:text-7xl font-extrabold text-[#0A2540] tracking-tight mb-6 leading-[1.1] break-words">
                 Master{" "}
-                <span className="bg-gradient-to-r from-orange-500 via-rose-600 to-blue-700 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-orange-500 via-rose-600 to-blue-700 bg-clip-text text-transparent inline-block">
                   TheWorkingZone
                 </span>{" "}
                 Platform
               </h1>
 
               <p className="text-lg md:text-xl text-[#0A2540]/80 max-w-2xl mx-auto font-medium leading-relaxed mb-12">
-                Explore interactive guides, user handbooks, safety protocols, and answers to common questions.
+                {t("learn_more_page.hero_subtitle")}
               </p>
 
-              {/* Floating Ultra-Sleek Search Input */}
+              {/* Floating Search Input */}
               <div className="max-w-2xl mx-auto relative mb-12">
                 <div className="relative flex items-center shadow-2xl rounded-2xl">
                   <Search className="absolute left-5 text-gray-400" size={22} />
@@ -233,7 +230,7 @@ const LearnMore = () => {
                     type="text"
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    placeholder="Search guides, topics, FAQs..."
+                    placeholder={t("learn_more_page.search_placeholder")}
                     className="w-full pl-14 pr-12 py-5 rounded-2xl bg-white/95 backdrop-blur-md border border-gray-200/80 text-[#0A2540] font-semibold text-base md:text-lg placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500 transition-all shadow-lg"
                   />
                   {searchQuery && (
@@ -249,18 +246,16 @@ const LearnMore = () => {
 
               {/* Theme Color Palette Category Pills */}
               <div className="flex flex-wrap justify-center gap-2.5 max-w-3xl mx-auto">
-                {(
-                  [
-                    { id: "all", label: "All Guides", color: "bg-[#0A2540] text-white" },
-                    { id: "workers", label: "For Workers", color: "bg-emerald-600 text-white" },
-                    { id: "contractors", label: "Contractors", color: "bg-orange-500 text-white" },
-                    { id: "legal", label: "Legal & Privacy", color: "bg-rose-800 text-white" },
-                    { id: "faq", label: "FAQ", color: "bg-blue-700 text-white" },
-                  ] as const
-                ).map((tab) => (
+                {[
+                  { id: "all", label: t("learn_more_page.tab_all"), color: "bg-[#0A2540] text-white" },
+                  { id: "workers", label: t("learn_more_page.tab_workers"), color: "bg-emerald-600 text-white" },
+                  { id: "contractors", label: t("learn_more_page.tab_contractors"), color: "bg-orange-500 text-white" },
+                  { id: "legal", label: t("footer.columns.legal"), color: "bg-rose-800 text-white" },
+                  { id: "faq", label: t("learn_more_page.tab_faq"), color: "bg-blue-700 text-white" },
+                ].map((tab) => (
                   <button
                     key={tab.id}
-                    onClick={() => setActiveTab(tab.id)}
+                    onClick={() => setActiveTab(tab.id as any)}
                     className={`px-5 py-2.5 rounded-xl text-xs md:text-sm font-bold transition-all shadow-sm ${
                       activeTab === tab.id
                         ? `${tab.color} scale-105 shadow-md ring-2 ring-offset-2 ring-gray-200`
@@ -320,7 +315,7 @@ const LearnMore = () => {
                     to={card.tab === "legal" ? "/privacy-policy" : "/download"}
                     className={`inline-flex items-center justify-between w-full p-4 rounded-2xl font-bold text-sm transition-all group/btn shadow-sm ${card.btnColor}`}
                   >
-                    <span>{card.tab === "legal" ? "View Policy Docs" : "Get App Guide"}</span>
+                    <span>{card.tab === "legal" ? t("footer.links.privacy") : t("navbar.download")}</span>
                     <ArrowRight size={18} className="group-hover/btn:translate-x-1 transition-transform" />
                   </Link>
                 </motion.div>
@@ -328,65 +323,14 @@ const LearnMore = () => {
           </div>
         </section>
 
-        {/* Legal & Security Spotlight */}
-        {(activeTab === "all" || activeTab === "legal") && (
-          <section className="container mx-auto px-6 max-w-5xl mb-24">
-            <div className="bg-gradient-to-r from-rose-900 via-[#0A2540] to-blue-950 p-10 md:p-14 rounded-[36px] text-white shadow-2xl relative overflow-hidden border border-rose-800/30">
-              <div className="absolute top-0 right-0 w-80 h-80 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
-              <div className="absolute bottom-0 left-0 w-80 h-80 bg-orange-500/10 rounded-full blur-3xl pointer-events-none" />
-
-              <div className="grid md:grid-cols-12 gap-8 items-center relative z-10">
-                <div className="md:col-span-8">
-                  <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-rose-500/20 text-rose-200 border border-rose-400/30 text-xs font-extrabold uppercase tracking-wider mb-4">
-                    <Shield size={14} className="text-emerald-400" />
-                    <span>Compliance & Protection</span>
-                  </div>
-                  <h2 className="font-heading text-3xl md:text-4xl font-extrabold mb-4">
-                    Transparent Policies & Data Security
-                  </h2>
-                  <p className="text-white/80 font-medium leading-relaxed mb-8 text-base">
-                    We maintain strict data privacy, encryption, and worker safety guidelines across India. Read our complete legal documentation.
-                  </p>
-
-                  <div className="flex flex-wrap gap-4">
-                    <Link
-                      to="/privacy-policy"
-                      className="inline-flex items-center gap-2 px-6 py-3.5 rounded-2xl bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-sm shadow-lg transition-all hover:scale-105"
-                    >
-                      <Lock size={16} />
-                      <span>Privacy Policy</span>
-                    </Link>
-                    <Link
-                      to="/terms-and-conditions"
-                      className="inline-flex items-center gap-2 px-6 py-3.5 rounded-2xl bg-orange-500 hover:bg-orange-600 text-white font-bold text-sm shadow-lg transition-all hover:scale-105"
-                    >
-                      <FileText size={16} />
-                      <span>Terms & Conditions</span>
-                    </Link>
-                  </div>
-                </div>
-
-                <div className="md:col-span-4 flex justify-center">
-                  <div className="w-36 h-36 rounded-full bg-gradient-to-tr from-emerald-400 via-orange-400 to-rose-500 p-1 shadow-2xl flex items-center justify-center">
-                    <div className="w-full h-full rounded-full bg-[#0A2540] flex flex-col items-center justify-center text-center p-4">
-                      <Award size={36} className="text-emerald-400 mb-1" />
-                      <span className="text-[10px] font-black uppercase text-white">Verified Platform</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-        )}
-
         {/* Video Walkthrough Previews */}
         <section className="container mx-auto px-6 max-w-6xl mb-16">
           <div className="text-center max-w-2xl mx-auto mb-12">
             <span className="text-[11px] font-extrabold uppercase tracking-widest text-emerald-600 block mb-2">
-              Visual Guides
+              {t("learn_more_page.video_badge")}
             </span>
             <h2 className="font-heading text-3xl md:text-4xl font-extrabold text-[#0A2540]">
-              Video Walkthroughs
+              {t("learn_more_page.video_title")}
             </h2>
           </div>
 
@@ -460,13 +404,6 @@ const LearnMore = () => {
                   {selectedVideo.desc}
                 </p>
 
-                <div className="p-4 rounded-2xl bg-emerald-50 border border-emerald-200 flex items-center gap-3 mb-6">
-                  <Zap size={20} className="text-emerald-600 shrink-0" />
-                  <p className="text-xs text-emerald-950 font-bold">
-                    Full HD step-by-step video tutorials are integrated directly inside TheWorkingZone Mobile App!
-                  </p>
-                </div>
-
                 <a
                   href={PLAY_STORE_URL}
                   target="_blank"
@@ -474,7 +411,7 @@ const LearnMore = () => {
                   className="flex items-center justify-center gap-2 w-full py-4 rounded-2xl bg-orange-500 hover:bg-orange-600 text-white font-bold text-sm shadow-lg transition-all"
                 >
                   <Download size={18} />
-                  <span>Download App to Watch</span>
+                  <span>{t("hero.download_playstore")}</span>
                 </a>
               </motion.div>
             </motion.div>
@@ -485,10 +422,10 @@ const LearnMore = () => {
         <section className="container mx-auto px-6 max-w-4xl mb-24">
           <div className="text-center mb-12">
             <span className="text-[11px] font-extrabold uppercase tracking-widest text-rose-700 block mb-2">
-              Got Questions?
+              {t("learn_more_page.tab_faq")}
             </span>
             <h2 className="font-heading text-3xl md:text-4xl font-extrabold text-[#0A2540]">
-              Frequently Asked Questions
+              {t("learn_more_page.faq_title")}
             </h2>
           </div>
 
@@ -534,52 +471,9 @@ const LearnMore = () => {
               ))
             ) : (
               <div className="text-center p-12 bg-white rounded-3xl border border-gray-200">
-                <p className="text-gray-500 font-medium">No matching questions found for "{searchQuery}".</p>
-                <button
-                  onClick={() => setSearchQuery("")}
-                  className="mt-4 px-6 py-2 rounded-xl bg-[#0A2540] text-white text-xs font-bold"
-                >
-                  Clear Search
-                </button>
+                <p className="text-gray-500 font-medium">No matching questions found.</p>
               </div>
             )}
-          </div>
-        </section>
-
-        {/* Global Download Banner */}
-        <section className="container mx-auto px-6 max-w-5xl">
-          <div className="relative overflow-hidden bg-gradient-to-br from-[#0A2540] via-[#0A2540] to-rose-950 rounded-[36px] p-10 md:p-16 text-white text-center shadow-2xl border border-rose-900/30">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/20 rounded-full blur-3xl pointer-events-none" />
-            <div className="absolute bottom-0 left-0 w-64 h-64 bg-orange-500/20 rounded-full blur-3xl pointer-events-none" />
-
-            <div className="relative z-10 max-w-2xl mx-auto">
-              <Smartphone size={48} className="mx-auto mb-4 text-orange-400" />
-              <h2 className="font-heading text-3xl md:text-5xl font-extrabold mb-4 leading-tight">
-                Ready to Experience <span className="text-orange-400">TheWorkingZone</span>?
-              </h2>
-              <p className="text-white/80 text-base md:text-lg font-medium mb-8">
-                Download the official app on Google Play to post jobs, find skilled workers, and manage your workforce today.
-              </p>
-
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a
-                  href={PLAY_STORE_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-2xl shadow-xl transition-all hover:scale-105 active:scale-95 text-base"
-                >
-                  <Download size={20} />
-                  <span>Download on Google Play</span>
-                </a>
-                <Link
-                  to="/contact"
-                  className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-md text-white font-bold rounded-2xl border border-white/20 transition-all hover:scale-105 active:scale-95 text-base"
-                >
-                  <span>Contact Support</span>
-                  <ChevronRight size={20} />
-                </Link>
-              </div>
-            </div>
           </div>
         </section>
       </main>

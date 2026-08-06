@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, ArrowRight } from "lucide-react";
+import { Menu, X, ArrowRight, Download } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import {
   DropdownMenu,
@@ -62,7 +62,7 @@ const Navbar = () => {
     { href: "/features", label: t("navbar.features") },
     { href: "/about", label: t("navbar.about") },
     { href: "/vision", label: t("navbar.vision") },
-    { href: "/learn-more", label: "Learn More" },
+    { href: "/learn-more", label: t("navbar.learn_more") },
     { href: "/contact", label: t("navbar.contact") },
   ];
 
@@ -77,8 +77,8 @@ const Navbar = () => {
       transition={{ duration: 0.5 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-white/90 backdrop-blur-md border-b border-gray-100 py-3 shadow-sm"
-          : "bg-transparent py-5"
+          ? "bg-white/95 backdrop-blur-xl border-b border-gray-200/80 py-3 shadow-md shadow-gray-200/40"
+          : "bg-transparent py-4 sm:py-5"
       }`}
     >
       <div className="container mx-auto flex items-center justify-between px-6">
@@ -87,111 +87,145 @@ const Navbar = () => {
         </Link>
 
         {/* Desktop Navigation */}
-        <div className="hidden lg:flex items-center gap-10">
-          <div className="flex items-center gap-8">
-            {links.map((link) => (
-              <Link
-                key={link.label}
-                to={link.href}
-                onClick={handleLinkClick}
-                className="text-[15px] font-bold text-[#0A2540] transition-colors hover:text-secondary relative group/link"
-              >
-                {link.label}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-secondary transition-all duration-300 group-hover/link:w-full" />
-              </Link>
-            ))}
+        <div className="hidden lg:flex items-center gap-8">
+          <div className="flex items-center gap-2.5">
+            {links.map((link) => {
+              const isActive = location.pathname === link.href;
+              return (
+                <Link
+                  key={link.label}
+                  to={link.href}
+                  onClick={handleLinkClick}
+                  className={`text-[15px] transition-all relative inline-flex items-center justify-center ${
+                    isActive
+                      ? "bg-white/90 backdrop-blur-md px-4 py-1.5 rounded-2xl border border-gray-200/90 shadow-sm"
+                      : "px-3 py-1.5 rounded-xl hover:bg-gray-50/80"
+                  }`}
+                >
+                  <span
+                    className={
+                      isActive
+                        ? "bg-gradient-to-r from-orange-500 via-rose-600 to-blue-700 bg-clip-text text-transparent font-extrabold"
+                        : "text-[#0A2540] font-bold hover:text-orange-500 transition-colors"
+                    }
+                  >
+                    {link.label}
+                  </span>
+                </Link>
+              );
+            })}
           </div>
 
-          <div className="h-6 w-px bg-gray-200" />
+          <div className="h-5 w-px bg-gray-200" />
 
-          {/* Language Switcher */}
+          {/* Theme Styled Language Switcher Dropdown */}
           <DropdownMenu>
-            <DropdownMenuTrigger className="flex items-center gap-1.5 text-[15px] font-bold text-[#0A2540] hover:text-secondary outline-none transition-colors">
-              <Languages size={18} className="text-secondary" />
+            <DropdownMenuTrigger className="inline-flex items-center gap-2 px-3.5 py-2 rounded-2xl bg-white/90 backdrop-blur-md border border-gray-200/90 text-[14px] font-extrabold text-[#0A2540] hover:border-orange-300 hover:bg-white shadow-sm transition-all outline-none">
+              <Languages size={17} className="text-orange-500" />
               <span>{currentLanguageName}</span>
             </DropdownMenuTrigger>
-            <DropdownMenuContent align="end" className="bg-white border-gray-100 rounded-2xl p-1 shadow-2xl min-w-[180px] z-[60] max-h-[450px] overflow-y-auto custom-scrollbar">
+            <DropdownMenuContent align="end" className="bg-white/95 backdrop-blur-xl border border-gray-100 rounded-2xl p-1.5 shadow-2xl min-w-[190px] z-[60] max-h-[450px] overflow-y-auto custom-scrollbar">
               {languages.map((lng) => (
                 <DropdownMenuItem
                   key={lng.code}
                   onClick={() => changeLanguage(lng.code)}
-                  className={`flex items-center justify-between py-2.5 px-4 rounded-xl text-sm cursor-pointer transition-colors ${
-                    i18n.language === lng.code ? "bg-primary/5 text-primary font-bold" : "text-gray-600 hover:bg-gray-50"
+                  className={`flex items-center justify-between py-2.5 px-4 rounded-xl text-xs font-bold cursor-pointer transition-colors ${
+                    i18n.language === lng.code ? "bg-orange-50 text-orange-600 font-extrabold" : "text-[#0A2540] hover:bg-gray-50"
                   }`}
                 >
                   {lng.name}
-                  {i18n.language === lng.code && <div className="h-1.5 w-1.5 rounded-full bg-primary" />}
+                  {i18n.language === lng.code && <div className="h-2 w-2 rounded-full bg-orange-500" />}
                 </DropdownMenuItem>
               ))}
             </DropdownMenuContent>
           </DropdownMenu>
 
+          {/* Theme Multi-Color Gradient Download Button */}
           <Link
             to="/download"
-            className="flex items-center gap-2 rounded-2xl bg-[#0A2540] px-6 py-3 text-sm font-bold text-white shadow-lg transition-all hover:scale-105 hover:bg-blue-900 active:scale-95"
+            className="inline-flex items-center gap-2 rounded-2xl bg-gradient-to-r from-orange-500 via-rose-600 to-blue-700 hover:from-orange-600 hover:via-rose-700 hover:to-blue-800 px-6 py-2.5 text-sm font-extrabold text-white shadow-lg shadow-orange-500/20 transition-all hover:scale-105 active:scale-95"
           >
-            {t("navbar.download")}
-            <ArrowRight size={18} />
+            <span>{t("navbar.download")}</span>
+            <ArrowRight size={17} />
           </Link>
         </div>
 
         {/* Mobile toggle */}
-        <button className="lg:hidden text-foreground p-2" onClick={() => setIsOpen(!isOpen)}>
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
+        <button className="lg:hidden text-[#0A2540] p-2 rounded-xl bg-white/80 border border-gray-200 shadow-sm" onClick={() => setIsOpen(!isOpen)}>
+          {isOpen ? <X size={22} /> : <Menu size={22} />}
         </button>
       </div>
 
-      {/* Mobile menu */}
+      {/* Mobile Menu */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            className="lg:hidden overflow-hidden border-t border-gray-100 bg-white shadow-2xl"
+            className="lg:hidden overflow-hidden border-t border-gray-100 bg-white/95 backdrop-blur-xl shadow-2xl"
           >
-            <div className="flex flex-col gap-4 px-6 py-8">
-              {links.map((link) => (
-                <Link
-                  key={link.label}
-                  to={link.href}
-                  onClick={handleLinkClick}
-                  className="font-body text-lg font-bold text-[#0A2540] py-2 border-l-4 border-transparent hover:border-primary hover:pl-4 transition-all"
-                >
-                  {link.label}
-                </Link>
-              ))}
+            <div className="flex flex-col gap-3 px-6 py-6">
+              {links.map((link) => {
+                const isActive = location.pathname === link.href;
+                return (
+                  <Link
+                    key={link.label}
+                    to={link.href}
+                    onClick={handleLinkClick}
+                    className={`text-base font-extrabold py-2.5 px-4 rounded-2xl transition-all ${
+                      isActive
+                        ? "bg-white border border-gray-200 shadow-sm"
+                        : "text-[#0A2540] hover:bg-gray-50"
+                    }`}
+                  >
+                    <span
+                      className={
+                        isActive
+                          ? "bg-gradient-to-r from-orange-500 via-rose-600 to-blue-700 bg-clip-text text-transparent font-extrabold"
+                          : "text-[#0A2540]"
+                      }
+                    >
+                      {link.label}
+                    </span>
+                  </Link>
+                );
+              })}
+
               {/* Mobile Language Switcher */}
-              <div className="py-2 border-t border-gray-100 mt-2">
+              <div className="py-3 border-t border-gray-100 mt-2">
                 <DropdownMenu>
-                  <DropdownMenuTrigger className="flex items-center gap-2 text-lg font-bold text-[#0A2540] outline-none w-full">
-                    <Languages size={20} className="text-secondary" />
-                    <span>{currentLanguageName}</span>
+                  <DropdownMenuTrigger className="flex items-center justify-between px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 text-base font-extrabold text-[#0A2540] outline-none w-full">
+                    <div className="flex items-center gap-2">
+                      <Languages size={20} className="text-orange-500" />
+                      <span>{currentLanguageName}</span>
+                    </div>
                   </DropdownMenuTrigger>
                   <DropdownMenuContent align="start" className="bg-white border-gray-100 rounded-2xl p-1 shadow-2xl min-w-[220px] z-[60] max-h-[350px] overflow-y-auto">
                     {languages.map((lng) => (
                       <DropdownMenuItem
                         key={lng.code}
                         onClick={() => changeLanguage(lng.code)}
-                        className={`flex items-center justify-between py-3 px-5 rounded-xl text-base cursor-pointer transition-colors ${
-                          i18n.language === lng.code ? "bg-primary/5 text-primary font-bold" : "text-gray-600 hover:bg-gray-50"
+                        className={`flex items-center justify-between py-3 px-5 rounded-xl text-sm font-bold cursor-pointer transition-colors ${
+                          i18n.language === lng.code ? "bg-orange-50 text-orange-600" : "text-gray-700 hover:bg-gray-50"
                         }`}
                       >
                         {lng.name}
-                        {i18n.language === lng.code && <div className="h-2 w-2 rounded-full bg-primary" />}
+                        {i18n.language === lng.code && <div className="h-2 w-2 rounded-full bg-orange-500" />}
                       </DropdownMenuItem>
                     ))}
                   </DropdownMenuContent>
                 </DropdownMenu>
               </div>
 
+              {/* Mobile Download CTA */}
               <Link
                 to="/download"
                 onClick={() => setIsOpen(false)}
-                className="bg-[#0A2540] rounded-xl px-5 py-4 text-center text-base font-bold text-white mt-4 shadow-lg active:scale-95 transition-transform flex items-center justify-center gap-2"
+                className="bg-gradient-to-r from-orange-500 via-rose-600 to-blue-700 hover:from-orange-600 hover:via-rose-700 hover:to-blue-800 rounded-2xl px-5 py-3.5 text-center text-base font-extrabold text-white mt-2 shadow-lg active:scale-95 transition-all flex items-center justify-center gap-2"
               >
-                {t("navbar.download")}
-                <ArrowRight size={20} />
+                <Download size={20} />
+                <span>{t("navbar.download")}</span>
               </Link>
             </div>
           </motion.div>

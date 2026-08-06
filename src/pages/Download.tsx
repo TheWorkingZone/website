@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
-import { Link } from "react-router-dom";
 import {
   Download,
   Sparkles,
@@ -10,11 +9,8 @@ import {
   Zap,
   Star,
   Users,
-  ArrowRight,
-  Lock,
   Award,
   Globe,
-  QrCode,
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -68,40 +64,40 @@ const DownloadPage = () => {
                     <span className="flex h-2 w-2 rounded-full bg-emerald-500 animate-ping" />
                     <Sparkles size={14} className="text-orange-500" />
                     <span className="text-[11px] font-black uppercase tracking-[0.2em] text-[#0A2540]">
-                      Official Mobile App
+                      {t("download_page.badge")}
                     </span>
                     <span className="flex h-2 w-2 rounded-full bg-rose-600" />
                   </div>
 
-                  <h1 className="font-heading text-4xl sm:text-6xl font-extrabold text-[#0A2540] tracking-tight leading-[1.1] mb-6">
-                    Download{" "}
-                    <span className="bg-gradient-to-r from-orange-500 via-rose-600 to-blue-700 bg-clip-text text-transparent">
+                  <h1 className="font-heading text-3xl sm:text-5xl md:text-6xl font-extrabold text-[#0A2540] tracking-tight leading-[1.1] mb-6 break-words">
+                    {t("download_page.hero_title_prefix", "Download")}{" "}
+                    <span className="bg-gradient-to-r from-orange-500 via-rose-600 to-blue-700 bg-clip-text text-transparent inline-block">
                       TheWorkingZone
                     </span>{" "}
-                    Mobile App
+                    {t("download_page.hero_title_suffix", "Official Mobile App")}
                   </h1>
 
                   <p className="text-lg md:text-xl text-[#0A2540]/80 font-medium leading-relaxed mb-8 max-w-2xl">
-                    Get instant access to daily jobs, verified worker profiles, contractor management tools, and transparent labor dispatching across India.
+                    {t("download_page.hero_subtitle")}
                   </p>
 
                   {/* Value Bullet Points */}
                   <div className="grid sm:grid-cols-2 gap-3 mb-10 max-w-xl">
                     <div className="flex items-center gap-2.5 text-xs font-bold text-[#0A2540] bg-white/80 backdrop-blur-sm p-3 rounded-xl border border-gray-200/60 shadow-sm">
                       <CheckCircle2 size={16} className="text-emerald-500 shrink-0" />
-                      <span>100% Free for Workers</span>
+                      <span>{t("download_page.p1")}</span>
                     </div>
                     <div className="flex items-center gap-2.5 text-xs font-bold text-[#0A2540] bg-white/80 backdrop-blur-sm p-3 rounded-xl border border-gray-200/60 shadow-sm">
                       <CheckCircle2 size={16} className="text-orange-500 shrink-0" />
-                      <span>Instant Location Alerts</span>
+                      <span>{t("download_page.p2")}</span>
                     </div>
                     <div className="flex items-center gap-2.5 text-xs font-bold text-[#0A2540] bg-white/80 backdrop-blur-sm p-3 rounded-xl border border-gray-200/60 shadow-sm">
                       <CheckCircle2 size={16} className="text-rose-700 shrink-0" />
-                      <span>Direct Daily Wage Logs</span>
+                      <span>{t("download_page.p3")}</span>
                     </div>
                     <div className="flex items-center gap-2.5 text-xs font-bold text-[#0A2540] bg-white/80 backdrop-blur-sm p-3 rounded-xl border border-gray-200/60 shadow-sm">
                       <CheckCircle2 size={16} className="text-blue-600 shrink-0" />
-                      <span>Regional Languages</span>
+                      <span>{t("download_page.p4")}</span>
                     </div>
                   </div>
 
@@ -120,9 +116,9 @@ const DownloadPage = () => {
                             <span className="text-xs font-bold text-white ml-1">4.9 / 5</span>
                           </div>
                           <h3 className="font-heading text-lg font-extrabold text-white">
-                            Available on Google Play
+                            {t("hero.download_playstore")}
                           </h3>
-                          <p className="text-xs text-white/70 font-medium">Safe, Verified & Instant Installation</p>
+                          <p className="text-xs text-white/70 font-medium">{t("hero.badge_verified_title")}</p>
                         </div>
                       </div>
 
@@ -130,10 +126,10 @@ const DownloadPage = () => {
                         href={PLAY_STORE_URL}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-2xl bg-orange-500 hover:bg-orange-600 text-white font-bold text-sm shadow-xl transition-all hover:scale-105 active:scale-95 shrink-0 w-full sm:w-auto"
+                        className="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-2xl bg-gradient-to-r from-orange-500 via-rose-600 to-blue-700 hover:from-orange-600 hover:via-rose-700 hover:to-blue-800 text-white font-extrabold text-sm shadow-xl transition-all hover:scale-105 active:scale-95 shrink-0 w-full sm:w-auto"
                       >
                         <Download size={18} />
-                        <span>Install App</span>
+                        <span>{t("navbar.download")}</span>
                       </a>
                     </div>
                   </div>
@@ -166,8 +162,8 @@ const DownloadPage = () => {
                       <ShieldCheck size={20} />
                     </div>
                     <div>
-                      <p className="text-xs font-black text-[#0A2540] uppercase tracking-wider">100% Verified</p>
-                      <p className="text-[11px] text-gray-500 font-bold">Google Play Store Security</p>
+                      <p className="text-xs font-black text-[#0A2540] uppercase tracking-wider">{t("hero.badge_verified_title")}</p>
+                      <p className="text-[11px] text-gray-500 font-bold">{t("hero.badge_verified_sub")}</p>
                     </div>
                   </motion.div>
 
@@ -180,8 +176,8 @@ const DownloadPage = () => {
                       <Zap size={20} />
                     </div>
                     <div>
-                      <p className="text-xs font-black text-[#0A2540] uppercase tracking-wider">Instant Work</p>
-                      <p className="text-[11px] text-gray-500 font-bold">Daily Job Alerts</p>
+                      <p className="text-xs font-black text-[#0A2540] uppercase tracking-wider">{t("hero.badge_dispatch_title")}</p>
+                      <p className="text-[11px] text-gray-500 font-bold">{t("hero.badge_dispatch_sub")}</p>
                     </div>
                   </motion.div>
                 </motion.div>
@@ -194,10 +190,10 @@ const DownloadPage = () => {
         <section className="container mx-auto px-6 max-w-6xl mb-20">
           <div className="text-center max-w-2xl mx-auto mb-14">
             <span className="text-[11px] font-extrabold uppercase tracking-widest text-emerald-600 block mb-2">
-              Designed For Everyone
+              {t("download_page.badge")}
             </span>
             <h2 className="font-heading text-3xl md:text-4xl font-extrabold text-[#0A2540]">
-              One App for Workers & Contractors
+              {t("download_page.exp_title")}
             </h2>
           </div>
 
@@ -215,27 +211,27 @@ const DownloadPage = () => {
                   <Users size={28} />
                 </div>
                 <span className="text-[10px] font-black uppercase tracking-widest text-emerald-800 bg-emerald-50 border border-emerald-200 px-3 py-1 rounded-full mb-3 inline-block">
-                  For Workers
+                  {t("download_page.worker_badge")}
                 </span>
                 <h3 className="font-heading text-2xl font-extrabold text-[#0A2540] mb-3">
-                  Find Daily Work & Build Reputation
+                  {t("download_page.worker_title")}
                 </h3>
                 <p className="text-sm text-gray-600 font-medium leading-relaxed mb-6">
-                  Get notified when local contractors need your skills. Apply in one tap, document your work hours, and build a verified reputation for higher wages.
+                  {t("download_page.worker_desc")}
                 </p>
 
                 <div className="space-y-3 mb-8">
                   <div className="flex items-center gap-3 text-xs font-bold text-gray-800">
                     <CheckCircle2 size={16} className="text-emerald-600 shrink-0" />
-                    <span>Free worker registration & job applications</span>
+                    <span>{t("download_page.worker_i1")}</span>
                   </div>
                   <div className="flex items-center gap-3 text-xs font-bold text-gray-800">
                     <CheckCircle2 size={16} className="text-emerald-600 shrink-0" />
-                    <span>Direct pay agreement tracking without middlemen</span>
+                    <span>{t("download_page.worker_i2")}</span>
                   </div>
                   <div className="flex items-center gap-3 text-xs font-bold text-gray-800">
                     <CheckCircle2 size={16} className="text-emerald-600 shrink-0" />
-                    <span>Simple voice & regional language UI support</span>
+                    <span>{t("download_page.worker_i3")}</span>
                   </div>
                 </div>
               </div>
@@ -247,7 +243,7 @@ const DownloadPage = () => {
                 className="inline-flex items-center justify-center gap-2 w-full py-4 rounded-2xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm shadow-md transition-all active:scale-95"
               >
                 <Download size={18} />
-                <span>Get Worker App</span>
+                <span>{t("hero.download_playstore")}</span>
               </a>
             </motion.div>
 
@@ -264,27 +260,27 @@ const DownloadPage = () => {
                   <Zap size={28} />
                 </div>
                 <span className="text-[10px] font-black uppercase tracking-widest text-orange-800 bg-orange-50 border border-orange-200 px-3 py-1 rounded-full mb-3 inline-block">
-                  For Contractors & Hirers
+                  {t("download_page.contractor_badge")}
                 </span>
                 <h3 className="font-heading text-2xl font-extrabold text-[#0A2540] mb-3">
-                  Mobilize & Manage Skilled Talent
+                  {t("download_page.contractor_title")}
                 </h3>
                 <p className="text-sm text-gray-600 font-medium leading-relaxed mb-6">
-                  Post site requirements in 60 seconds, review applicant skill ratings, assign labor teams, and monitor real-time daily site attendance.
+                  {t("download_page.contractor_desc")}
                 </p>
 
                 <div className="space-y-3 mb-8">
                   <div className="flex items-center gap-3 text-xs font-bold text-gray-800">
                     <CheckCircle2 size={16} className="text-orange-500 shrink-0" />
-                    <span>Instant dispatch to local verified workers</span>
+                    <span>{t("download_page.contractor_i1")}</span>
                   </div>
                   <div className="flex items-center gap-3 text-xs font-bold text-gray-800">
                     <CheckCircle2 size={16} className="text-orange-500 shrink-0" />
-                    <span>Multi-site attendance & contract logs</span>
+                    <span>{t("download_page.contractor_i2")}</span>
                   </div>
                   <div className="flex items-center gap-3 text-xs font-bold text-gray-800">
                     <CheckCircle2 size={16} className="text-orange-500 shrink-0" />
-                    <span>Rating & attendance history visibility</span>
+                    <span>{t("download_page.contractor_i3")}</span>
                   </div>
                 </div>
               </div>
@@ -296,7 +292,7 @@ const DownloadPage = () => {
                 className="inline-flex items-center justify-center gap-2 w-full py-4 rounded-2xl bg-orange-500 hover:bg-orange-600 text-white font-bold text-sm shadow-md transition-all active:scale-95"
               >
                 <Download size={18} />
-                <span>Get Contractor App</span>
+                <span>{t("hero.download_playstore")}</span>
               </a>
             </motion.div>
           </div>
@@ -304,7 +300,7 @@ const DownloadPage = () => {
 
         {/* Viksit Bharat Spotlight Card */}
         <section className="container mx-auto px-6 max-w-5xl">
-          <div className="bg-gradient-to-r from-rose-900 via-[#0A2540] to-blue-950 p-10 md:p-14 rounded-[36px] text-white shadow-2xl relative overflow-hidden border border-rose-800/30">
+          <div className="bg-gradient-to-r from-rose-900 via-[#0A2540] to-blue-950 p-6 sm:p-10 md:p-14 rounded-3xl sm:rounded-[36px] text-white shadow-2xl relative overflow-hidden border border-rose-800/30">
             <div className="absolute top-0 right-0 w-80 h-80 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
             <div className="absolute bottom-0 left-0 w-80 h-80 bg-orange-500/10 rounded-full blur-3xl pointer-events-none" />
 
@@ -312,23 +308,23 @@ const DownloadPage = () => {
               <div className="md:col-span-8">
                 <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-rose-500/20 text-rose-200 border border-rose-400/30 text-xs font-extrabold uppercase tracking-wider mb-4">
                   <Award size={14} className="text-emerald-400" />
-                  <span>National Empowerment</span>
+                  <span>{t("download_page.viksit_badge")}</span>
                 </div>
-                <h2 className="font-heading text-3xl md:text-5xl font-extrabold mb-4 leading-tight">
-                  Building Today for a Stronger, <span className="text-orange-400">Viksit Bharat</span>
+                <h2 className="font-heading text-2xl sm:text-4xl md:text-5xl font-extrabold mb-4 leading-tight break-words">
+                  {t("download_page.viksit_title")} <span className="text-orange-400 inline-block">Viksit Bharat</span>
                 </h2>
                 <p className="text-white/80 font-medium leading-relaxed text-base mb-8">
-                  TheWorkingZone is dedicated to organizing India's blue-collar workforce, facilitating transparent wages, digital identity, and dignified employment across every city.
+                  {t("download_page.viksit_desc")}
                 </p>
 
                 <a
                   href={PLAY_STORE_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2.5 px-8 py-4 rounded-2xl bg-orange-500 hover:bg-orange-600 text-white font-bold text-base shadow-xl transition-all hover:scale-105 active:scale-95"
+                  className="inline-flex items-center gap-2.5 px-8 py-4 rounded-2xl bg-gradient-to-r from-orange-500 via-rose-600 to-blue-700 hover:from-orange-600 hover:via-rose-700 hover:to-blue-800 text-white font-extrabold text-base shadow-xl transition-all hover:scale-105 active:scale-95"
                 >
                   <Download size={20} />
-                  <span>Download on Google Play</span>
+                  <span>{t("hero.download_playstore")}</span>
                 </a>
               </div>
 

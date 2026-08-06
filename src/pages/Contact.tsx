@@ -9,7 +9,6 @@ import {
   MessageCircle,
   MessageSquare,
   Sparkles,
-  MapPin,
   Send,
   CheckCircle2,
   Download,
@@ -44,7 +43,7 @@ const Contact = () => {
     setIsSubmitting(true);
     setTimeout(() => {
       setIsSubmitting(false);
-      toast.success("Thank you! Your message has been sent successfully. We will get back to you shortly.");
+      toast.success(t("contact_page.toast_title"));
       setFormData({ name: "", contact: "", role: "Worker", message: "" });
     }, 1000);
   };
@@ -84,20 +83,20 @@ const Contact = () => {
                 <span className="flex h-2 w-2 rounded-full bg-emerald-500 animate-ping" />
                 <Sparkles size={14} className="text-orange-500" />
                 <span className="text-[11px] font-black uppercase tracking-[0.2em] text-[#0A2540]">
-                  Get In Touch
+                  {t("contact_page.badge")}
                 </span>
                 <span className="flex h-2 w-2 rounded-full bg-rose-600" />
               </div>
 
-              <h1 className="font-heading text-4xl sm:text-6xl md:text-7xl font-extrabold text-[#0A2540] tracking-tight mb-6 leading-[1.1]">
-                {t("contact.title_part1")}{" "}
-                <span className="bg-gradient-to-r from-orange-500 via-rose-600 to-blue-700 bg-clip-text text-transparent">
-                  {t("contact.title_part2")}
+              <h1 className="font-heading text-4xl sm:text-6xl md:text-7xl font-extrabold text-[#0A2540] tracking-tight mb-6 leading-[1.1] break-words">
+                We are Here for{" "}
+                <span className="bg-gradient-to-r from-orange-500 via-rose-600 to-blue-700 bg-clip-text text-transparent inline-block">
+                  {t("contact_page.hero_title_gradient", "Workers & Contractors")}
                 </span>
               </h1>
 
               <p className="text-lg md:text-xl text-[#0A2540]/80 max-w-2xl mx-auto font-medium leading-relaxed mb-12">
-                {t("contact.description")}
+                {t("contact_page.hero_subtitle")}
               </p>
             </motion.div>
           </div>
@@ -118,13 +117,13 @@ const Contact = () => {
                   <MessageCircle size={28} />
                 </div>
                 <span className="text-[10px] font-extrabold uppercase tracking-widest text-emerald-700 bg-emerald-50 border border-emerald-200 px-3 py-1 rounded-full mb-3 inline-block">
-                  Instant Support
+                  {t("contact_page.c1_title")}
                 </span>
                 <h3 className="font-heading text-2xl font-extrabold text-[#0A2540] mb-2">
-                  WhatsApp Us
+                  {t("common.whatsapp_support")}
                 </h3>
                 <p className="text-sm text-gray-600 font-medium leading-relaxed mb-6">
-                  Get quick responses for registration, job inquiries, and app support.
+                  {t("contact_page.c1_desc")}
                 </p>
                 <p className="text-lg font-bold text-[#0A2540] mb-6">{PHONE_NUMBER}</p>
               </div>
@@ -136,7 +135,7 @@ const Contact = () => {
                 className="inline-flex items-center justify-center gap-2 w-full py-4 rounded-2xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm shadow-md transition-all active:scale-95"
               >
                 <MessageCircle size={18} />
-                <span>Chat on WhatsApp</span>
+                <span>{t("common.whatsapp_support")}</span>
               </a>
             </motion.div>
 
@@ -152,17 +151,17 @@ const Contact = () => {
                   <Phone size={28} />
                 </div>
                 <span className="text-[10px] font-extrabold uppercase tracking-widest text-orange-800 bg-orange-50 border border-orange-200 px-3 py-1 rounded-full mb-3 inline-block">
-                  Voice Call
+                  {t("contact.phone")}
                 </span>
                 <h3 className="font-heading text-2xl font-extrabold text-[#0A2540] mb-2">
-                  Call Support
+                  {t("contact_page.c2_title")}
                 </h3>
                 <p className="text-sm text-gray-600 font-medium leading-relaxed mb-2">
-                  Speak directly with our dedicated support representatives.
+                  {t("contact_page.c2_desc")}
                 </p>
                 <p className="text-xs text-gray-500 font-semibold mb-4 flex items-center gap-1.5">
                   <Clock size={14} className="text-orange-500" />
-                  <span>Mon - Sat: 9:00 AM - 7:00 PM IST</span>
+                  <span>{t("contact.hours_val")}</span>
                 </p>
                 <p className="text-lg font-bold text-[#0A2540] mb-6">{PHONE_NUMBER}</p>
               </div>
@@ -172,7 +171,7 @@ const Contact = () => {
                 className="inline-flex items-center justify-center gap-2 w-full py-4 rounded-2xl bg-orange-500 hover:bg-orange-600 text-white font-bold text-sm shadow-md transition-all active:scale-95"
               >
                 <Phone size={18} />
-                <span>Call Now</span>
+                <span>{t("common.call_now")}</span>
               </a>
             </motion.div>
 
@@ -188,13 +187,13 @@ const Contact = () => {
                   <Mail size={28} />
                 </div>
                 <span className="text-[10px] font-extrabold uppercase tracking-widest text-blue-800 bg-blue-50 border border-blue-200 px-3 py-1 rounded-full mb-3 inline-block">
-                  Official Desk
+                  {t("contact.email")}
                 </span>
                 <h3 className="font-heading text-2xl font-extrabold text-[#0A2540] mb-2">
-                  Email Desk
+                  {t("contact_page.c3_title")}
                 </h3>
                 <p className="text-sm text-gray-600 font-medium leading-relaxed mb-6">
-                  Send official inquiries, partnership proposals, or technical support emails.
+                  {t("contact_page.c3_desc")}
                 </p>
                 <p className="text-base font-bold text-[#0A2540] mb-6 truncate">{EMAIL_ADDRESS}</p>
               </div>
@@ -204,7 +203,7 @@ const Contact = () => {
                 className="inline-flex items-center justify-center gap-2 w-full py-4 rounded-2xl bg-[#0A2540] hover:bg-blue-950 text-white font-bold text-sm shadow-md transition-all active:scale-95"
               >
                 <Mail size={18} />
-                <span>Email Us</span>
+                <span>{t("common.email_us")}</span>
               </a>
             </motion.div>
           </div>
@@ -227,23 +226,23 @@ const Contact = () => {
                 </div>
                 <div>
                   <h3 className="font-heading text-2xl font-extrabold text-[#0A2540]">
-                    Send Us a Message
+                    {t("contact_page.form_title")}
                   </h3>
-                  <p className="text-xs text-gray-500 font-semibold">We typically respond within 24 hours.</p>
+                  <p className="text-xs text-gray-500 font-semibold">{t("contact_page.form_sub")}</p>
                 </div>
               </div>
 
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <label className="block text-xs font-extrabold uppercase tracking-wider text-[#0A2540] mb-2">
-                    Your Name <span className="text-rose-600">*</span>
+                    {t("contact_page.name")} <span className="text-rose-600">*</span>
                   </label>
                   <input
                     type="text"
                     required
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    placeholder="Enter your full name"
+                    placeholder={t("contact_page.name")}
                     className="w-full px-5 py-4 rounded-2xl bg-gray-50 border border-gray-200 text-[#0A2540] font-semibold text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 focus:bg-white transition-all"
                   />
                 </div>
@@ -251,7 +250,7 @@ const Contact = () => {
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-xs font-extrabold uppercase tracking-wider text-[#0A2540] mb-2">
-                      Phone Number / Email <span className="text-rose-600">*</span>
+                      {t("contact_page.phone")} / {t("contact_page.email")} <span className="text-rose-600">*</span>
                     </label>
                     <input
                       type="text"
@@ -265,31 +264,30 @@ const Contact = () => {
 
                   <div>
                     <label className="block text-xs font-extrabold uppercase tracking-wider text-[#0A2540] mb-2">
-                      I am a...
+                      {t("contact_page.role")}
                     </label>
                     <select
                       value={formData.role}
                       onChange={(e) => setFormData({ ...formData, role: e.target.value })}
                       className="w-full px-5 py-4 rounded-2xl bg-gray-50 border border-gray-200 text-[#0A2540] font-semibold text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 focus:bg-white transition-all"
                     >
-                      <option value="Worker">Worker</option>
-                      <option value="Contractor">Contractor</option>
-                      <option value="Company">Company / Client</option>
-                      <option value="Individual">Individual Hirer</option>
+                      <option value="Worker">{t("contact_page.role_worker")}</option>
+                      <option value="Contractor">{t("contact_page.role_contractor")}</option>
+                      <option value="Company">{t("contact_page.role_company")}</option>
                     </select>
                   </div>
                 </div>
 
                 <div>
                   <label className="block text-xs font-extrabold uppercase tracking-wider text-[#0A2540] mb-2">
-                    Message <span className="text-rose-600">*</span>
+                    {t("contact_page.message")} <span className="text-rose-600">*</span>
                   </label>
                   <textarea
                     rows={4}
                     required
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    placeholder="How can we help you?"
+                    placeholder={t("contact_page.message")}
                     className="w-full px-5 py-4 rounded-2xl bg-gray-50 border border-gray-200 text-[#0A2540] font-semibold text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 focus:bg-white transition-all resize-none"
                   />
                 </div>
@@ -300,7 +298,7 @@ const Contact = () => {
                   className="inline-flex items-center justify-center gap-2.5 w-full py-4 rounded-2xl bg-orange-500 hover:bg-orange-600 text-white font-bold text-base shadow-lg transition-all active:scale-95 disabled:opacity-50"
                 >
                   <Send size={18} />
-                  <span>{isSubmitting ? "Sending..." : "Submit Message"}</span>
+                  <span>{isSubmitting ? "Sending..." : t("contact_page.submit")}</span>
                 </button>
               </form>
             </motion.div>
@@ -317,24 +315,24 @@ const Contact = () => {
               <div className="bg-gradient-to-br from-[#0A2540] via-[#0A2540] to-rose-950 p-8 rounded-[36px] text-white shadow-xl border border-rose-900/30">
                 <div className="flex items-center gap-3 mb-6">
                   <ShieldCheck size={28} className="text-emerald-400" />
-                  <h4 className="font-heading text-xl font-bold">Verified Support Desk</h4>
+                  <h4 className="font-heading text-xl font-bold">{t("contact.info_title")}</h4>
                 </div>
                 <p className="text-white/80 text-sm font-medium leading-relaxed mb-6">
-                  Our official customer care team assists workers and contractors across India with onboarding, profile verification, and platform assistance.
+                  {t("contact.description")}
                 </p>
 
                 <div className="space-y-3 border-t border-white/10 pt-6">
                   <div className="flex items-center gap-3 text-xs text-white/90 font-semibold">
                     <CheckCircle2 size={16} className="text-emerald-400 shrink-0" />
-                    <span>Instant WhatsApp Resolution Desk</span>
+                    <span>{t("common.whatsapp_support")}</span>
                   </div>
                   <div className="flex items-center gap-3 text-xs text-white/90 font-semibold">
                     <CheckCircle2 size={16} className="text-orange-400 shrink-0" />
-                    <span>Verified Phone Helpline: +91 96996 52260</span>
+                    <span>{PHONE_NUMBER}</span>
                   </div>
                   <div className="flex items-center gap-3 text-xs text-white/90 font-semibold">
                     <CheckCircle2 size={16} className="text-rose-300 shrink-0" />
-                    <span>Direct Grievance & Escalation Support</span>
+                    <span>{EMAIL_ADDRESS}</span>
                   </div>
                 </div>
               </div>
@@ -342,16 +340,16 @@ const Contact = () => {
               {/* FAQs Quick Box */}
               <div className="bg-white p-8 rounded-[36px] border border-gray-200 shadow-md">
                 <h4 className="font-heading text-lg font-bold text-[#0A2540] mb-2">
-                  Looking for quick answers?
+                  {t("learn_more_page.faq_title")}
                 </h4>
                 <p className="text-xs text-gray-600 font-medium mb-6">
-                  Browse our interactive Knowledge Center and frequently asked questions.
+                  {t("learn_more_page.faq_sub")}
                 </p>
                 <Link
                   to="/learn-more"
                   className="inline-flex items-center justify-between w-full p-4 rounded-2xl bg-gray-50 hover:bg-[#0A2540] text-[#0A2540] hover:text-white font-bold text-xs transition-all group shadow-sm"
                 >
-                  <span>Explore Learn More Center</span>
+                  <span>{t("navbar.learn_more")}</span>
                   <Send size={14} className="group-hover:translate-x-1 transition-transform" />
                 </Link>
               </div>
@@ -361,16 +359,16 @@ const Contact = () => {
 
         {/* Global Download Banner */}
         <section className="container mx-auto px-6 max-w-5xl">
-          <div className="relative overflow-hidden bg-gradient-to-br from-[#0A2540] via-[#0A2540] to-rose-950 rounded-[36px] p-10 md:p-14 text-white text-center shadow-2xl border border-rose-900/30">
+          <div className="relative overflow-hidden bg-gradient-to-br from-[#0A2540] via-[#0A2540] to-rose-950 rounded-3xl sm:rounded-[36px] p-6 sm:p-10 md:p-14 text-white text-center shadow-2xl border border-rose-900/30">
             <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/20 rounded-full blur-3xl pointer-events-none" />
             <div className="absolute bottom-0 left-0 w-64 h-64 bg-orange-500/20 rounded-full blur-3xl pointer-events-none" />
 
             <div className="relative z-10 max-w-2xl mx-auto">
-              <h2 className="font-heading text-3xl md:text-4xl font-extrabold mb-4 leading-tight">
-                Connect with <span className="text-orange-400">TheWorkingZone</span> App
+              <h2 className="font-heading text-2xl sm:text-4xl font-extrabold mb-4 leading-tight break-words">
+                {t("cta.title_part1")} <span className="text-orange-400 inline-block">{t("cta.title_part2")}</span>
               </h2>
               <p className="text-white/80 text-sm md:text-base font-medium mb-8">
-                Download the official app on Google Play to access daily jobs and workforce management features.
+                {t("cta.description")}
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -378,10 +376,10 @@ const Contact = () => {
                   href={PLAY_STORE_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-2xl shadow-xl transition-all hover:scale-105 active:scale-95 text-sm"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-orange-500 via-rose-600 to-blue-700 hover:from-orange-600 hover:via-rose-700 hover:to-blue-800 text-white font-extrabold rounded-2xl shadow-xl transition-all hover:scale-105 active:scale-95 text-sm"
                 >
                   <Download size={18} />
-                  <span>Download on Google Play</span>
+                  <span>{t("hero.download_playstore")}</span>
                 </a>
               </div>
             </div>

@@ -3,16 +3,11 @@ import { useTranslation } from "react-i18next";
 import {
   Sparkles,
   Shield,
-  Zap,
-  Users,
   Briefcase,
   MapPin,
   CheckCircle2,
   Download,
   HardHat,
-  ChevronRight,
-  MessageSquare,
-  Lock,
   Smartphone,
   Star,
   Clock,
@@ -30,68 +25,68 @@ const FeaturesPage = () => {
     {
       icon: MapPin,
       badge: "Discovery",
-      title: "Hyperlocal Job Matching",
-      desc: "Instantly discover jobs or workers near your exact location using GPS-aware dispatching.",
+      title: t("features_page.f1_title"),
+      desc: t("features_page.f1_desc"),
       borderColor: "border-emerald-200 hover:border-emerald-500",
       iconBg: "bg-gradient-to-br from-emerald-500 to-teal-600 text-white shadow-md shadow-emerald-200",
       badgeColor: "bg-emerald-50 text-emerald-800 border-emerald-200",
       checkColor: "text-emerald-600",
-      points: ["Location radius filtering", "Instant SMS & app alerts", "Zero middleman fees"],
+      points: [t("hero.bullet2"), t("download_page.p2"), t("hero.bullet1")],
     },
     {
       icon: Briefcase,
       badge: "Dispatch",
-      title: "60-Second Job Posting",
-      desc: "Contractors can post workforce requirements specifying skills, daily wage, and site locations in under a minute.",
+      title: t("features_page.f2_title"),
+      desc: t("features_page.f2_desc"),
       borderColor: "border-orange-200 hover:border-orange-500",
       iconBg: "bg-gradient-to-br from-orange-500 to-amber-600 text-white shadow-md shadow-orange-200",
       badgeColor: "bg-orange-50 text-orange-800 border-orange-200",
       checkColor: "text-orange-500",
-      points: ["Custom skill categories", "Flexible wage options", "Multi-worker requirement posts"],
+      points: [t("download_page.contractor_title"), t("download_page.contractor_i1"), t("hero.bullet3")],
     },
     {
       icon: Shield,
       badge: "Security",
-      title: "Transparent Digital Terms",
-      desc: "Pre-agreed wages and digital work logs prevent misunderstandings between hirers and workers.",
+      title: t("features_page.f3_title"),
+      desc: t("features_page.f3_desc"),
       borderColor: "border-rose-200 hover:border-rose-500",
       iconBg: "bg-gradient-to-br from-rose-700 to-maroon-800 text-white shadow-md shadow-rose-200",
       badgeColor: "bg-rose-50 text-rose-900 border-rose-200",
       checkColor: "text-rose-700",
-      points: ["Verifiable contract logs", "Transparent pay schedules", "Support escalation desk"],
+      points: [t("download_page.worker_i2"), t("cta.pill_no_hidden"), t("cta.pill_support")],
     },
     {
       icon: HardHat,
       badge: "Identity",
-      title: "Verified Worker Profiles",
-      desc: "Workers showcase certified skills, experience badges, and past project ratings to build trust.",
+      title: t("features_page.f4_title"),
+      desc: t("features_page.f4_desc"),
       borderColor: "border-blue-200 hover:border-blue-500",
       iconBg: "bg-gradient-to-br from-blue-600 to-indigo-700 text-white shadow-md shadow-blue-200",
       badgeColor: "bg-blue-50 text-blue-900 border-blue-200",
       checkColor: "text-blue-700",
-      points: ["Skill certification tags", "OTP phone verification", "Digital track record"],
+      points: [t("hero.badge_verified_sub"), t("hero.bullet4"), t("download_page.b1_title")],
     },
     {
       icon: Clock,
       badge: "Operations",
-      title: "Multi-Site Attendance",
-      desc: "Contractors easily track worker check-ins and daily attendance across multiple construction sites.",
+      title: t("features_page.f5_title"),
+      desc: t("features_page.f5_desc"),
       borderColor: "border-emerald-200 hover:border-emerald-500",
       iconBg: "bg-gradient-to-br from-emerald-600 to-teal-700 text-white shadow-md shadow-emerald-200",
       badgeColor: "bg-emerald-50 text-emerald-800 border-emerald-200",
       checkColor: "text-emerald-600",
-      points: ["Daily attendance logs", "Multi-site dashboard", "Workforce status reports"],
+      points: [t("download_page.contractor_i2"), t("hero.badge_dispatch_title"), t("download_page.p3")],
     },
     {
       icon: Star,
       badge: "Quality",
-      title: "Rating & Accountability",
-      desc: "Bi-directional rating system ensures high work ethics for workers and fair treatment from hirers.",
+      title: t("features_page.f6_title"),
+      desc: t("features_page.f6_desc"),
       borderColor: "border-orange-200 hover:border-orange-500",
       iconBg: "bg-gradient-to-br from-orange-500 to-amber-600 text-white shadow-md shadow-orange-200",
       badgeColor: "bg-orange-50 text-orange-800 border-orange-200",
       checkColor: "text-orange-500",
-      points: ["Verified hirer reviews", "Star rating benchmarks", "Anti-fraud monitoring"],
+      points: [t("download_page.contractor_i3"), t("cta.pill_secure"), t("download_page.worker_title")],
     },
   ];
 
@@ -135,20 +130,20 @@ const FeaturesPage = () => {
                 <span className="flex h-2 w-2 rounded-full bg-emerald-500 animate-ping" />
                 <Sparkles size={14} className="text-orange-500" />
                 <span className="text-[11px] font-black uppercase tracking-[0.2em] text-[#0A2540]">
-                  Platform Capabilities
+                  {t("features_page.badge")}
                 </span>
                 <span className="flex h-2 w-2 rounded-full bg-rose-600" />
               </div>
 
-              <h1 className="font-heading text-4xl sm:text-6xl md:text-7xl font-extrabold text-[#0A2540] tracking-tight mb-6 leading-[1.1]">
+              <h1 className="font-heading text-4xl sm:text-6xl md:text-7xl font-extrabold text-[#0A2540] tracking-tight mb-6 leading-[1.1] break-words">
                 Powerful Features for{" "}
-                <span className="bg-gradient-to-r from-orange-500 via-rose-600 to-blue-700 bg-clip-text text-transparent">
-                  Workers & Contractors
+                <span className="bg-gradient-to-r from-orange-500 via-rose-600 to-blue-700 bg-clip-text text-transparent inline-block">
+                  {t("features_page.hero_title_gradient", "Workers & Contractors")}
                 </span>
               </h1>
 
               <p className="text-lg md:text-xl text-[#0A2540]/80 max-w-3xl mx-auto font-medium leading-relaxed mb-12">
-                Discover how TheWorkingZone streamlines job matching, workforce management, wage clarity, and site operations across India.
+                {t("features_page.hero_subtitle")}
               </p>
             </motion.div>
           </div>
@@ -158,10 +153,10 @@ const FeaturesPage = () => {
         <section className="container mx-auto px-6 max-w-6xl mb-24">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <span className="text-[11px] font-extrabold uppercase tracking-widest text-emerald-600 block mb-2">
-              Everything You Need
+              {t("features.badge")}
             </span>
             <h2 className="font-heading text-3xl md:text-4xl font-extrabold text-[#0A2540]">
-              Built for Modern Construction & Labor
+              {t("features_page.grid_title")}
             </h2>
           </div>
 
@@ -213,29 +208,29 @@ const FeaturesPage = () => {
               <div className="lg:col-span-7">
                 <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 text-xs font-extrabold uppercase tracking-wider mb-4">
                   <Smartphone size={14} className="text-emerald-600" />
-                  <span>Mobile First Experience</span>
+                  <span>{t("download_page.badge")}</span>
                 </div>
 
                 <h2 className="font-heading text-3xl md:text-4xl font-extrabold text-[#0A2540] mb-6">
-                  Simple, Fast & Intuitive Mobile App
+                  {t("download_page.exp_title")}
                 </h2>
 
                 <p className="text-gray-600 font-medium leading-relaxed text-base mb-6">
-                  Designed specifically for ease of use in the field. Workers can apply to jobs with a single tap, while contractors can post requirements and manage site attendance on the go.
+                  {t("download_page.hero_subtitle")}
                 </p>
 
                 <div className="space-y-4 mb-8">
                   <div className="flex items-start gap-3 text-sm text-[#0A2540] font-bold">
                     <CheckCircle2 size={20} className="text-emerald-600 shrink-0 mt-0.5" />
-                    <span>Works smoothly on low-bandwidth 3G/4G networks</span>
+                    <span>{t("download_page.worker_i1")}</span>
                   </div>
                   <div className="flex items-start gap-3 text-sm text-[#0A2540] font-bold">
                     <CheckCircle2 size={20} className="text-orange-500 shrink-0 mt-0.5" />
-                    <span>Regional language support for easy worker navigation</span>
+                    <span>{t("download_page.p4")}</span>
                   </div>
                   <div className="flex items-start gap-3 text-sm text-[#0A2540] font-bold">
                     <CheckCircle2 size={20} className="text-rose-700 shrink-0 mt-0.5" />
-                    <span>Instant push notifications for new local job requirements</span>
+                    <span>{t("download_page.p2")}</span>
                   </div>
                 </div>
 
@@ -246,7 +241,7 @@ const FeaturesPage = () => {
                   className="inline-flex items-center gap-2.5 px-8 py-4 rounded-2xl bg-orange-500 hover:bg-orange-600 text-white font-bold text-base shadow-lg transition-all hover:scale-105"
                 >
                   <Download size={20} />
-                  <span>Download App on Google Play</span>
+                  <span>{t("hero.download_playstore")}</span>
                 </a>
               </div>
 
@@ -271,16 +266,16 @@ const FeaturesPage = () => {
 
         {/* Global Download Banner */}
         <section className="container mx-auto px-6 max-w-5xl">
-          <div className="relative overflow-hidden bg-gradient-to-br from-[#0A2540] via-[#0A2540] to-rose-950 rounded-[36px] p-10 md:p-14 text-white text-center shadow-2xl border border-rose-900/30">
+          <div className="relative overflow-hidden bg-gradient-to-br from-[#0A2540] via-[#0A2540] to-rose-950 rounded-3xl sm:rounded-[36px] p-6 sm:p-10 md:p-14 text-white text-center shadow-2xl border border-rose-900/30">
             <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/20 rounded-full blur-3xl pointer-events-none" />
             <div className="absolute bottom-0 left-0 w-64 h-64 bg-orange-500/20 rounded-full blur-3xl pointer-events-none" />
 
             <div className="relative z-10 max-w-2xl mx-auto">
-              <h2 className="font-heading text-3xl md:text-5xl font-extrabold mb-4 leading-tight">
-                Unlock All Features on <span className="text-orange-400">TheWorkingZone</span>
+              <h2 className="font-heading text-2xl sm:text-4xl md:text-5xl font-extrabold mb-4 leading-tight break-words">
+                {t("cta.title_part1")} <span className="text-orange-400 inline-block">{t("cta.title_part2")}</span>
               </h2>
               <p className="text-white/80 text-base md:text-lg font-medium mb-8">
-                Download the official app on Google Play to access daily jobs and workforce management features.
+                {t("cta.description")}
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -288,10 +283,10 @@ const FeaturesPage = () => {
                   href={PLAY_STORE_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-2xl shadow-xl transition-all hover:scale-105 active:scale-95 text-base"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-orange-500 via-rose-600 to-blue-700 hover:from-orange-600 hover:via-rose-700 hover:to-blue-800 text-white font-extrabold rounded-2xl shadow-xl transition-all hover:scale-105 active:scale-95 text-base"
                 >
                   <Download size={20} />
-                  <span>Download on Google Play</span>
+                  <span>{t("hero.download_playstore")}</span>
                 </a>
               </div>
             </div>

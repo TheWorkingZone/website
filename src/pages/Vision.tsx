@@ -28,73 +28,73 @@ const VisionPage = () => {
     {
       icon: Users,
       badge: "Accessibility",
-      title: "Hyperlocal Worker Discovery",
-      desc: "Connecting skilled workers directly with nearby job opportunities without middlemen or hidden commission fees.",
+      title: t("vision_page.pillar1_title"),
+      desc: t("vision_page.pillar1_desc"),
       borderColor: "border-emerald-200 hover:border-emerald-500",
       iconBg: "bg-gradient-to-br from-emerald-500 to-teal-600 text-white shadow-md shadow-emerald-200",
       badgeColor: "bg-emerald-50 text-emerald-800 border-emerald-200",
       checkColor: "text-emerald-600",
-      points: ["Direct employer-to-worker connection", "No commission deductions", "Instant location-based job alerts"],
+      points: [t("hero.bullet1"), t("hero.bullet2"), t("download_page.p2")],
     },
     {
       icon: FileCheck,
       badge: "Transparency",
-      title: "Fair Digital Work Agreements",
-      desc: "Establishing clear wages, verified job terms, and transparent project milestones for both hirers and workers.",
+      title: t("vision_page.pillar2_title"),
+      desc: t("vision_page.pillar2_desc"),
       borderColor: "border-orange-200 hover:border-orange-500",
       iconBg: "bg-gradient-to-br from-orange-500 to-amber-600 text-white shadow-md shadow-orange-200",
       badgeColor: "bg-orange-50 text-orange-800 border-orange-200",
       checkColor: "text-orange-500",
-      points: ["Pre-agreed daily & contract wages", "Verifiable work histories", "Rating & feedback integrity"],
+      points: [t("hero.bullet3"), t("features_page.f4_title"), t("features_page.f6_title")],
     },
     {
       icon: ShieldCheck,
       badge: "Empowerment",
-      title: "Financial & Social Inclusion",
-      desc: "Fostering formal identity, skill certification, and digital track records for India's unorganized workforce.",
+      title: t("vision_page.pillar3_title"),
+      desc: t("vision_page.pillar3_desc"),
       borderColor: "border-rose-200 hover:border-rose-500",
       iconBg: "bg-gradient-to-br from-rose-700 to-maroon-800 text-white shadow-md shadow-rose-200",
       badgeColor: "bg-rose-50 text-rose-900 border-rose-200",
       checkColor: "text-rose-700",
-      points: ["Digital work identity badges", "Direct wage settlement tracking", "Equal access for all skilled trades"],
+      points: [t("hero.bullet4"), t("download_page.p3"), t("download_page.p1")],
     },
     {
       icon: Globe,
       badge: "Scalability",
-      title: "Unified Workforce Infrastructure",
-      desc: "Empowering contractors and enterprises with multi-site workforce management and real-time attendance tools.",
+      title: t("vision_page.pillar4_title"),
+      desc: t("vision_page.pillar4_desc"),
       borderColor: "border-blue-200 hover:border-blue-500",
       iconBg: "bg-gradient-to-br from-blue-600 to-indigo-700 text-white shadow-md shadow-blue-200",
       badgeColor: "bg-blue-50 text-blue-900 border-blue-200",
       checkColor: "text-blue-700",
-      points: ["Multi-site contractor dashboard", "Real-time daily attendance logs", "Pan-India labor dispatching"],
+      points: [t("download_page.contractor_i2"), t("features_page.f5_title"), t("hero.badge_dispatch_title")],
     },
   ];
 
   const roadmapPhases = [
     {
-      phase: "Phase 1",
-      title: "Hyperlocal Connect",
+      phase: t("vision_page.phase1_tag"),
+      title: t("vision_page.phase1_title"),
       accent: "text-emerald-700 bg-emerald-50 border-emerald-200",
       icon: Target,
       iconBg: "bg-emerald-500 text-white",
-      desc: "Digitalizing worker discovery across major industrial hubs, construction clusters, and tier-1/2 cities.",
+      desc: t("vision_page.phase1_desc"),
     },
     {
-      phase: "Phase 2",
-      title: "Financial & Skill Inclusion",
+      phase: t("vision_page.phase2_tag"),
+      title: t("vision_page.phase2_title"),
       accent: "text-orange-800 bg-orange-50 border-orange-200",
       icon: TrendingUp,
       iconBg: "bg-orange-500 text-white",
-      desc: "Facilitating transparent wage documentation, direct payout tracking, and verified skill badges.",
+      desc: t("vision_page.phase2_desc"),
     },
     {
-      phase: "Phase 3",
-      title: "Pan-India Ecosystem",
+      phase: t("vision_page.phase3_tag"),
+      title: t("vision_page.phase3_title"),
       accent: "text-rose-900 bg-rose-50 border-rose-200",
       icon: MapPin,
       iconBg: "bg-rose-700 text-white",
-      desc: "Building India's largest unified blue-collar workforce management platform.",
+      desc: t("vision_page.phase3_desc"),
     },
   ];
 
@@ -138,20 +138,20 @@ const VisionPage = () => {
                 <span className="flex h-2 w-2 rounded-full bg-emerald-500 animate-ping" />
                 <Sparkles size={14} className="text-orange-500" />
                 <span className="text-[11px] font-black uppercase tracking-[0.2em] text-[#0A2540]">
-                  Our Vision & Mission
+                  {t("vision_page.badge")}
                 </span>
                 <span className="flex h-2 w-2 rounded-full bg-rose-600" />
               </div>
 
-              <h1 className="font-heading text-4xl sm:text-6xl md:text-7xl font-extrabold text-[#0A2540] tracking-tight mb-6 leading-[1.1]">
+              <h1 className="font-heading text-4xl sm:text-6xl md:text-7xl font-extrabold text-[#0A2540] tracking-tight mb-6 leading-[1.1] break-words">
                 Empowering{" "}
-                <span className="bg-gradient-to-r from-orange-500 via-rose-600 to-blue-700 bg-clip-text text-transparent">
-                  India's Workforce
+                <span className="bg-gradient-to-r from-orange-500 via-rose-600 to-blue-700 bg-clip-text text-transparent inline-block">
+                  {t("vision_page.hero_title_gradient", "India's Workforce")}
                 </span>
               </h1>
 
               <p className="text-lg md:text-xl text-[#0A2540]/80 max-w-3xl mx-auto font-medium leading-relaxed mb-12">
-                Building an equitable, transparent, and digitally empowered ecosystem for millions of skilled workers, contractors, and site owners across India.
+                {t("vision_page.hero_subtitle")}
               </p>
             </motion.div>
           </div>
@@ -161,10 +161,10 @@ const VisionPage = () => {
         <section className="container mx-auto px-6 max-w-6xl mb-24">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <span className="text-[11px] font-extrabold uppercase tracking-widest text-emerald-600 block mb-2">
-              Strategic Foundation
+              {t("vision_page.pillars_badge")}
             </span>
             <h2 className="font-heading text-3xl md:text-4xl font-extrabold text-[#0A2540]">
-              The 4 Pillars of Our Vision
+              {t("vision_page.pillars_title")}
             </h2>
           </div>
 
@@ -214,10 +214,10 @@ const VisionPage = () => {
           <div className="bg-white p-10 md:p-14 rounded-[36px] border border-gray-200 shadow-xl">
             <div className="text-center max-w-2xl mx-auto mb-16">
               <span className="text-[11px] font-extrabold uppercase tracking-widest text-orange-500 block mb-2">
-                Execution Blueprint
+                {t("vision_page.roadmap_badge")}
               </span>
               <h2 className="font-heading text-3xl md:text-4xl font-extrabold text-[#0A2540]">
-                Our Strategic Roadmap
+                {t("vision_page.roadmap_title")}
               </h2>
             </div>
 
@@ -264,13 +264,13 @@ const VisionPage = () => {
               <div className="md:col-span-8">
                 <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-rose-500/20 text-rose-200 border border-rose-400/30 text-xs font-extrabold uppercase tracking-wider mb-4">
                   <Award size={14} className="text-emerald-400" />
-                  <span>Platform Promise</span>
+                  <span>{t("download_page.viksit_badge")}</span>
                 </div>
                 <h2 className="font-heading text-3xl md:text-4xl font-extrabold mb-4">
-                  Dignity, Transparency & Growth
+                  {t("vision_page.spotlight_title")}
                 </h2>
                 <p className="text-white/80 font-medium leading-relaxed mb-8 text-base">
-                  Every feature we build is designed to protect worker rights, eliminate middleman exploitation, and help contractors scale seamlessly.
+                  {t("vision_page.spotlight_desc")}
                 </p>
 
                 <div className="flex flex-wrap gap-4">
@@ -278,14 +278,14 @@ const VisionPage = () => {
                     to="/learn-more"
                     className="inline-flex items-center gap-2 px-6 py-3.5 rounded-2xl bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-sm shadow-lg transition-all hover:scale-105"
                   >
-                    <span>Learn More Hub</span>
+                    <span>{t("navbar.learn_more")}</span>
                     <ChevronRight size={16} />
                   </Link>
                   <Link
                     to="/contact"
                     className="inline-flex items-center gap-2 px-6 py-3.5 rounded-2xl bg-orange-500 hover:bg-orange-600 text-white font-bold text-sm shadow-lg transition-all hover:scale-105"
                   >
-                    <span>Contact Our Team</span>
+                    <span>{t("navbar.contact")}</span>
                     <ChevronRight size={16} />
                   </Link>
                 </div>
@@ -295,7 +295,7 @@ const VisionPage = () => {
                 <div className="w-36 h-36 rounded-full bg-gradient-to-tr from-emerald-400 via-orange-400 to-rose-500 p-1 shadow-2xl flex items-center justify-center">
                   <div className="w-full h-full rounded-full bg-[#0A2540] flex flex-col items-center justify-center text-center p-4">
                     <Compass size={36} className="text-orange-400 mb-1" />
-                    <span className="text-[10px] font-black uppercase text-white">Our Mission</span>
+                    <span className="text-[10px] font-black uppercase text-white">{t("vision_page.badge")}</span>
                   </div>
                 </div>
               </div>
@@ -305,16 +305,16 @@ const VisionPage = () => {
 
         {/* Global Download Banner */}
         <section className="container mx-auto px-6 max-w-5xl">
-          <div className="relative overflow-hidden bg-gradient-to-br from-[#0A2540] via-[#0A2540] to-rose-950 rounded-[36px] p-10 md:p-14 text-white text-center shadow-2xl border border-rose-900/30">
+          <div className="relative overflow-hidden bg-gradient-to-br from-[#0A2540] via-[#0A2540] to-rose-950 rounded-3xl sm:rounded-[36px] p-6 sm:p-10 md:p-14 text-white text-center shadow-2xl border border-rose-900/30">
             <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/20 rounded-full blur-3xl pointer-events-none" />
             <div className="absolute bottom-0 left-0 w-64 h-64 bg-orange-500/20 rounded-full blur-3xl pointer-events-none" />
 
             <div className="relative z-10 max-w-2xl mx-auto">
-              <h2 className="font-heading text-3xl md:text-5xl font-extrabold mb-4 leading-tight">
-                Join <span className="text-orange-400">TheWorkingZone</span> Vision
+              <h2 className="font-heading text-2xl sm:text-4xl md:text-5xl font-extrabold mb-4 leading-tight break-words">
+                {t("cta.title_part1")} <span className="text-orange-400 inline-block">{t("cta.title_part2")}</span>
               </h2>
               <p className="text-white/80 text-base md:text-lg font-medium mb-8">
-                Download the app on Google Play and be part of India's workforce transformation.
+                {t("cta.description")}
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -322,10 +322,10 @@ const VisionPage = () => {
                   href={PLAY_STORE_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-2xl shadow-xl transition-all hover:scale-105 active:scale-95 text-base"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-orange-500 via-rose-600 to-blue-700 hover:from-orange-600 hover:via-rose-700 hover:to-blue-800 text-white font-extrabold rounded-2xl shadow-xl transition-all hover:scale-105 active:scale-95 text-base"
                 >
                   <Download size={20} />
-                  <span>Download on Google Play</span>
+                  <span>{t("hero.download_playstore")}</span>
                 </a>
               </div>
             </div>

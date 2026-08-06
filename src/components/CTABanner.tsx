@@ -44,37 +44,37 @@ const CTABanner = () => {
             <div className="lg:col-span-8 text-center lg:text-left">
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-orange-50 text-orange-700 border border-orange-200 text-xs font-extrabold uppercase tracking-wider mb-6">
                 <Sparkles size={14} className="text-orange-500" />
-                <span>Empowering India's Workforce</span>
+                <span>{t("cta.badge_empowering")}</span>
               </div>
 
               <h2 className="font-heading text-3xl sm:text-5xl font-extrabold text-[#0A2540] tracking-tight leading-[1.15] mb-6">
-                {t("cta.title_part1", "One Platform.")} <br />
+                {t("cta.title_part1")} <br />
                 <span className="bg-gradient-to-r from-orange-500 via-rose-600 to-blue-700 bg-clip-text text-transparent">
-                  {t("cta.title_part2", "Endless Opportunities.")}
+                  {t("cta.title_part2")}
                 </span>
               </h2>
 
               <p className="text-gray-600 text-base sm:text-lg font-medium leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0">
-                {t("cta.description", "Join thousands of workers, contractors, and companies already growing with TheWorkingZone.")}
+                {t("cta.description")}
               </p>
 
               {/* Feature Micro Pills */}
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-xl mx-auto lg:mx-0">
                 <div className="flex items-center gap-2 text-xs font-bold text-[#0A2540] bg-emerald-50/80 border border-emerald-100 p-2.5 rounded-xl">
                   <CheckCircle2 size={16} className="text-emerald-600 shrink-0" />
-                  <span>No Hidden Fees</span>
+                  <span>{t("cta.pill_no_hidden")}</span>
                 </div>
                 <div className="flex items-center gap-2 text-xs font-bold text-[#0A2540] bg-orange-50/80 border border-orange-100 p-2.5 rounded-xl">
                   <CheckCircle2 size={16} className="text-orange-500 shrink-0" />
-                  <span>100% Secure</span>
+                  <span>{t("cta.pill_secure")}</span>
                 </div>
                 <div className="flex items-center gap-2 text-xs font-bold text-[#0A2540] bg-rose-50/80 border border-rose-100 p-2.5 rounded-xl">
                   <CheckCircle2 size={16} className="text-rose-700 shrink-0" />
-                  <span>Built for India</span>
+                  <span>{t("cta.pill_built_india")}</span>
                 </div>
                 <div className="flex items-center gap-2 text-xs font-bold text-[#0A2540] bg-blue-50/80 border border-blue-100 p-2.5 rounded-xl">
                   <CheckCircle2 size={16} className="text-blue-700 shrink-0" />
-                  <span>24/7 Support</span>
+                  <span>{t("cta.pill_support")}</span>
                 </div>
               </div>
             </div>
@@ -83,27 +83,27 @@ const CTABanner = () => {
             <div className="lg:col-span-4 flex flex-col items-center justify-center text-center p-6 rounded-3xl bg-gradient-to-br from-[#0A2540] via-[#0A2540] to-rose-950 text-white shadow-xl border border-rose-900/30">
               <Smartphone size={40} className="text-orange-400 mb-3" />
               <p className="text-xs font-black uppercase tracking-widest text-emerald-400 mb-1">
-                Official App
+                {t("cta.official_app")}
               </p>
               <h3 className="font-heading text-xl font-extrabold mb-4">
-                Available on Google Play
+                {t("cta.available_playstore")}
               </h3>
 
               <a
                 href={PLAY_STORE_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 w-full py-4 px-6 rounded-2xl bg-orange-500 hover:bg-orange-600 text-white font-bold text-sm shadow-lg transition-all hover:scale-105 active:scale-95 mb-4"
+                className="inline-flex items-center justify-center gap-2 w-full py-4 px-6 rounded-2xl bg-gradient-to-r from-orange-500 via-rose-600 to-blue-700 hover:from-orange-600 hover:via-rose-700 hover:to-blue-800 text-white font-extrabold text-sm shadow-xl transition-all hover:scale-105 active:scale-95 mb-4"
               >
                 <Download size={18} />
-                <span>Get on Google Play</span>
+                <span>{t("cta.get_playstore")}</span>
               </a>
 
               <Link
                 to="/contact"
                 className="inline-flex items-center gap-1.5 text-xs text-white/80 hover:text-white font-bold transition-colors"
               >
-                <span>Have questions? Contact Us</span>
+                <span>{t("cta.have_questions")}</span>
                 <ChevronRight size={14} />
               </Link>
             </div>
